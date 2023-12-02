@@ -18,6 +18,21 @@ setTimeout(() => {
     });
 }, 2500);
 
+/*Main menu content fade in animation*/
+
+setTimeout(() => {
+    let gameWindows = [];
+    document.querySelectorAll('.main-menu-game-window').forEach(game => {
+        gameWindows.push(game)
+    });
+    for (let i = 0; i < gameWindows.length; i++) {
+        let interval = i * 100 + 100;
+        setTimeout(() => {
+            gameWindows[i].classList.add('game-window-fade-in');
+        }, interval);
+    }
+}, 2600);
+
 /*Main menu game window hover*/
 
 document.querySelectorAll('.game-window-hover').forEach(game => {
@@ -39,6 +54,7 @@ document.querySelectorAll('.game-window-hover').forEach(game => {
         });
     }
     game.addEventListener('mouseenter', () => {
+        //info bar colour change
         let infoBg1 = game.parentNode.querySelector('.game-window-info-bg');
         let infoBg2 = game.parentNode.querySelector('.game-window-info-accent');
         let id = infoBg1.id.substring(20);
@@ -46,8 +62,17 @@ document.querySelectorAll('.game-window-hover').forEach(game => {
         infoBg1.classList.remove('game-window-colour-change-default');
         infoBg2.classList.add('game-window-colour-change-'+id+'-accent');
         infoBg2.classList.remove('game-window-colour-change-default-accent');
+        //pokemon sprites hover effect
+        let spriteContainer = game.parentNode.querySelector('.game-window-image');
+        spriteContainer.classList.add('game-window-image-hover');
+        spriteContainer.classList.remove('game-window-image');
+        //background image hover effect
+        let background = game.parentNode.querySelector('.game-window-image-bg');
+        background.classList.add('game-window-image-bg-hover');
+        background.classList.remove('game-window-image-bg');
     });
     game.addEventListener('mouseleave', () => {
+        //info bar colour change
         let infoBg1 = game.parentNode.querySelector('.game-window-info-bg');
         let infoBg2 = game.parentNode.querySelector('.game-window-info-accent');
         let id = infoBg1.id.substring(20);
@@ -55,5 +80,13 @@ document.querySelectorAll('.game-window-hover').forEach(game => {
         infoBg1.classList.remove('game-window-colour-change-'+id);
         infoBg2.classList.add('game-window-colour-change-default-accent');
         infoBg2.classList.remove('game-window-colour-change-'+id+'-accent');
+        //pokemon sprites hover effect
+        let spriteContainer = game.parentNode.querySelector('.game-window-image-hover');
+        spriteContainer.classList.add('game-window-image');
+        spriteContainer.classList.remove('game-window-image-hover');
+        //background image hover effect
+        let background = game.parentNode.querySelector('.game-window-image-bg-hover');
+        background.classList.add('game-window-image-bg');
+        background.classList.remove('game-window-image-bg-hover');
     });
 });
