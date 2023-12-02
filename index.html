@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Professor's PC - Pokemon Team Optimiser</title>
+    <link rel='icon' type='images/x-icon' href='./images/pokeball.svg'>
+    <link rel='stylesheet' href='style.css'>
+    <script src='./scripts/main.js' type='module'></script>
+    <script src='./scripts/animation.js' type='module'></script>
+</head>
+
+<body>
+    <nav style='background-color: var(--ui_accent_red);'>
+        <div class='navbar-margin'></div>
+        <div class='navbar'>
+            <div class='navbar-content'>
+                <h4>Professor's PC</h4>
+                <div class='navbar-settings-container'></div>
+            </div>
+            <div class='navbar-bg-accent' style='background-color: var(--ui_primary_dark);'></div>
+        </div>
+    </nav>
+    <section class='splash-screen-section'>
+        <div class='splash-menu-screen'></div>
+        <div class='splash-animation-top'></div>
+        <div class='splash-animation-bottom'></div>
+    </section>
+    <section class='main-menu-section'>
+        <div class='main-menu-wrapper'>
+            <div class='main-menu'>
+                <div class='main-menu-header'>
+                    <div id='main-menu-header-welcome'>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-0' data-letter='W'>W</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-1' data-letter='E'>E</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-2' data-letter='L'>L</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-3' data-letter='C'>C</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-4' data-letter='O'>O</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-5' data-letter='M'>M</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-6' data-letter='E'>E</h2>
+                    </div>
+                    <div id='main-menu-header-to'>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-7' data-letter='T'>T</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-8' data-letter='O'>O</h2>
+                    </div>
+                    <div id='main-menu-header-professors'>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-9' data-letter='P'>P</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-10' data-letter='R'>R</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-11' data-letter='O'>O</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-12' data-letter='F'>F</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-13' data-letter='E'>E</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-14' data-letter='S'>S</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-15' data-letter='S'>S</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-16' data-letter='O'>O</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-17' data-letter='R'>R</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-18' data-letter='S'>S</h2>
+                    </div>
+                    <div id='main-menu-header-pc'>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-19' data-letter='P'>P</h2>
+                        <h2 class='main-menu-header-text' id='main-menu-header-text-20' data-letter='C'>C</h2>
+                    </div>
+                </div>
+                <div class='main-menu-content'>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='00-window-info-text-0' data-letter='R'>R</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-1' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-2' data-letter='d'>d</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-3' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-4' data-letter='B'>B</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-5' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-6' data-letter='u'>u</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-7' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-8' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-9' data-letter='Y'>Y</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-10' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-11' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-12' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-13' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='00-window-info-text-14' data-letter='w'>w</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-rby'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='01-window-info-text-0' data-letter='G'>G</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-1' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-2' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-3' data-letter='d'>d</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-4' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-5' data-letter='S'>S</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-6' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-7' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-8' data-letter='v'>v</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-8' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-10' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-11' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-12' data-letter='C'>C</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-13' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-14' data-letter='y'>y</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-15' data-letter='s'>s</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-16' data-letter='t'>t</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-17' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='01-window-info-text-18' data-letter='l'>l</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-gsc'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='02-window-info-text-0' data-letter='R'>R</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-1' data-letter='u'>u</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-2' data-letter='b'>b</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-3' data-letter='y'>y</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-4' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-5' data-letter='S'>S</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-6' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-7' data-letter='p'>p</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-8' data-letter='p'>p</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-8' data-letter='h'>h</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-10' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-11' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-12' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-13' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-14' data-letter='E'>E</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-15' data-letter='m'>m</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-16' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-17' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-18' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-19' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='02-window-info-text-20' data-letter='d'>d</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-rbe'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='03-window-info-text-0' data-letter='F'>F</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-1' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-2' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-3' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-4' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-5' data-letter='R'>R</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-6' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-7' data-letter='d'>d</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-8' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-8' data-letter='L'>L</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-10' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-11' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-12' data-letter='f'>f</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-13' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-14' data-letter='G'>G</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-15' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-16' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-17' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='03-window-info-text-18' data-letter='n'>n</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-frlg'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='04-window-info-text-0' data-letter='D'>D</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-1' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-2' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-3' data-letter='m'>m</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-4' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-5' data-letter='n'>n</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-6' data-letter='d'>d</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-7' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-8' data-letter='P'>P</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-8' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-10' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-11' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-12' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-13' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-14' data-letter='P'>P</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-15' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-16' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-17' data-letter='t'>t</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-18' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-19' data-letter='n'>n</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-20' data-letter='u'>u</p>
+                            <p class='game-window-info-title-text' id='04-window-info-text-21' data-letter='m'>m</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-dppt'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='05-window-info-text-0' data-letter='H'>H</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-1' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-2' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-3' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-4' data-letter='t'>t</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-5' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-6' data-letter='G'>G</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-7' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-8' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-9' data-letter='d'>d</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-10' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-11' data-letter='S'>S</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-12' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-13' data-letter='u'>u</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-14' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-15' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-16' data-letter='S'>S</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-17' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-18' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-19' data-letter='v'>v</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-20' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='05-window-info-text-21' data-letter='r'>r</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-hgss'>                       
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='06-window-info-text-0' data-letter='B'>B</p>
+                            <p class='game-window-info-title-text' id='06-window-info-text-1' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='06-window-info-text-2' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='06-window-info-text-3' data-letter='c'>c</p>
+                            <p class='game-window-info-title-text' id='06-window-info-text-4' data-letter='k'>k</p>
+                            <p class='game-window-info-title-text' id='06-window-info-text-5' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='06-window-info-text-6' data-letter='W'>W</p>
+                            <p class='game-window-info-title-text' id='06-window-info-text-7' data-letter='h'>h</p>
+                            <p class='game-window-info-title-text' id='06-window-info-text-8' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='06-window-info-text-9' data-letter='t'>t</p>
+                            <p class='game-window-info-title-text' id='06-window-info-text-10' data-letter='e'>e</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-bw'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='07-window-info-text-0' data-letter='B'>B</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-1' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-2' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-3' data-letter='c'>c</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-4' data-letter='k'>k</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-5' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-6' data-letter='2'>2</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-7' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-8' data-letter='W'>W</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-9' data-letter='h'>h</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-10' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-11' data-letter='t'>t</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-12' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-13' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='07-window-info-text-14' data-letter='2'>2</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-b2w2'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='08-window-info-text-0' data-letter='X'>X</p>
+                            <p class='game-window-info-title-text' id='08-window-info-text-1' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='08-window-info-text-2' data-letter='Y'>Y</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-xy'>                            
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='09-window-info-text-0' data-letter='O'>O</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-1' data-letter='m'>m</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-2' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-3' data-letter='g'>g</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-4' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-5' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-6' data-letter='R'>R</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-7' data-letter='u'>u</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-8' data-letter='b'>b</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-8' data-letter='y'>y</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-10' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-11' data-letter='A'>A</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-12' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-13' data-letter='p'>p</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-14' data-letter='h'>h</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-15' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-16' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-17' data-letter='S'>S</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-18' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-19' data-letter='p'>p</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-20' data-letter='p'>p</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-21' data-letter='h'>h</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-22' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-23' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='09-window-info-text-24' data-letter='e'>e</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-oras'>                      
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='10-window-info-text-0' data-letter='S'>S</p>
+                            <p class='game-window-info-title-text' id='10-window-info-text-1' data-letter='u'>u</p>
+                            <p class='game-window-info-title-text' id='10-window-info-text-2' data-letter='n'>n</p>
+                            <p class='game-window-info-title-text' id='10-window-info-text-3' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='10-window-info-text-4' data-letter='M'>M</p>
+                            <p class='game-window-info-title-text' id='10-window-info-text-5' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='10-window-info-text-6' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='10-window-info-text-7' data-letter='n'>n</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-sm'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='11-window-info-text-0' data-letter='U'>U</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-1' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-2' data-letter='t'>t</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-3' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-4' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-5' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-6' data-letter='S'>S</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-7' data-letter='u'>u</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-8' data-letter='n'>n</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-9' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-10' data-letter='U'>U</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-11' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-12' data-letter='t'>t</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-13' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-14' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-15' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-16' data-letter='M'>M</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-17' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-18' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='11-window-info-text-19' data-letter='n'>n</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-usum'>                      
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='12-window-info-text-0' data-letter='L'>L</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-1' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-2' data-letter='t'>t</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-3' data-letter='s'>s</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-4' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-5' data-letter='G'>G</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-6' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-7' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-8' data-letter='P'>P</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-9' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-10' data-letter='k'>k</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-11' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-12' data-letter='c'>c</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-13' data-letter='h'>h</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-14' data-letter='u'>u</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-18' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-15' data-letter='E'>E</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-16' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-17' data-letter='v'>v</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-19' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='12-window-info-text-20' data-letter='e'>e</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-lgpe'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='13-window-info-text-0' data-letter='S'>S</p>
+                            <p class='game-window-info-title-text' id='13-window-info-text-1' data-letter='w'>w</p>
+                            <p class='game-window-info-title-text' id='13-window-info-text-2' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='13-window-info-text-3' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='13-window-info-text-4' data-letter='d'>d</p>
+                            <p class='game-window-info-title-text' id='13-window-info-text-5' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='13-window-info-text-6' data-letter='S'>S</p>
+                            <p class='game-window-info-title-text' id='13-window-info-text-7' data-letter='h'>h</p>
+                            <p class='game-window-info-title-text' id='13-window-info-text-8' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='13-window-info-text-9' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='13-window-info-text-10' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='13-window-info-text-11' data-letter='d'>d</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-swsh'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='14-window-info-text-0' data-letter='B'>B</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-1' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-2' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-3' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-4' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-6' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-7' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-8' data-letter='n'>n</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-9' data-letter='t'>t</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-10' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-11' data-letter='D'>D</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-12' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-13' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-14' data-letter='m'>m</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-15' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-16' data-letter='n'>n</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-17' data-letter='d'>d</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-18' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-19' data-letter='S'>S</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-20' data-letter='h'>h</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-21' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-22' data-letter='n'>n</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-23' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-24' data-letter='n'>n</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-25' data-letter='g'>g</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-26' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-27' data-letter='P'>P</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-28' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-29' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-30' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='14-window-info-text-31' data-letter='l'>l</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-bdsp'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='15-window-info-text-0' data-letter='L'>L</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-1' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-2' data-letter='g'>g</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-3' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-4' data-letter='n'>n</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-5' data-letter='d'>d</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-6' data-letter='s'>s</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-7' data-letter='‏‏‎ ‎'>‏‏‎ ‎</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-8' data-letter='A'>A</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-9' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-10' data-letter='c'>c</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-11' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-12' data-letter='u'>u</p>
+                            <p class='game-window-info-title-text' id='15-window-info-text-13' data-letter='s'>s</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-lga'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                    <div class='main-menu-game-window'>
+                        <div class='game-window-hover'></div>
+                        <div class='game-window-info-title'>
+                            <p class='game-window-info-title-text' id='16-window-info-text-0' data-letter='S'>S</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-1' data-letter='c'>c</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-2' data-letter='a'>a</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-3' data-letter='r'>r</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-4' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-6' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-7' data-letter='t'>t</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-8' data-letter='/'>/</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-9' data-letter='V'>V</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-10' data-letter='i'>i</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-11' data-letter='o'>o</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-12' data-letter='l'>l</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-13' data-letter='e'>e</p>
+                            <p class='game-window-info-title-text' id='16-window-info-text-14' data-letter='t'>t</p>
+                        </div>
+                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-sv'>
+                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
+                        </div>
+                        <div class='game-window-image-container'>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Made by Nathan Moir</p>
+    </footer>
+</body>
+
+</html>

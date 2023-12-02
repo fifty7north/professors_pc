@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Pixelify+Sans&family=Amiko:wght@400;700&display=swap');
+
+@font-face {
+    font-family: Pokemon-Glyphs;
+    src: url('./typefaces/ThraexSansRegular-v1000.ttf');
+}
+
+:root {
+    --ui_primary_light: #FCFCFC;
+    --ui_primary_dark: #0D0D0D;
+    --ui_accent_red: #C91D2B;
+    --ui_accent_green: #2BC91D;
+    --ui_light_1: #EBEBEB;
+    --ui_light_2: #D9D9D9;
+    --ui_light_3: #BFBFBF;
+    --ui_dark_1: #1A1A1A;
+    --ui_dark_2: #262626;
+    --ui_dark_3: #383838;
+    /*Type colours*/
+    --normal: #A8A77A;
+    --fire: #EE8130;
+    --water: #6390F0;
+    --electric: #F7D02C;
+    --grass: #7AC74C;
+    --ice: #96D9D6;
+    --fighting: #C22E28;
+    --poison: #A33EA1;
+    --ground: #E2BF65;
+    --flying: #A98FF3;
+    --psychic: #F95587;
+    --bug: #A6B91A;
+    --rock: #B6A136;
+    --ghost: #735797;
+    --dragon: #6F35FC;
+    --dark: #705746;
+    --steel: #B7B7CE;
+    --fairy: #D685AD;
+    /*Game colours*/
+    --pkmn_red: #C91D1D;
+    --pkmn_blue: #3333CC;
+    --pkmn_yellow: #FFFF00;
+    --pkmn_gold: #FFBB33;
+    --pkmn_silver: #CCCCCC;
+    --pkmn_crystal: #98C4CD;
+    --pkmn_ruby: #AA0000;
+    --pkmn_sapphire: #0000AA;
+    --pkmn_emerald: #008800;
+    --pkmn_fireRed: #F45925;
+    --pkmn_leafGreen: #A6CC33;
+    --pkmn_diamond: #5CC2D6;
+    --pkmn_pearl: #E87D98;
+    --pkmn_platinum: #CCCCCC;
+    --pkmn_black: #000000;
+    --pkmn_white: #FFFFFF;
+    --pkmn_x: #1D8FC9;
+    --pkmn_y: #EC1313;
+    --pkmn_sun: #F2A60D;
+    --pkmn_moon: #2947A3;
+    --pkmn_letsGoPikachu: #FBDE51;
+    --pkmn_letsGoEevee: #CB8C4D;
+    --pkmn_sword: #00AAFF;
+    --pkmn_shield: #FF0055;
+    --pkmn_legendsArceus: #006699;
+    --pkmn_legendsArceusAccent: #7AB87A;
+    --pkmn_scarlet: #B81414;
+    --pkmn_violet: #5C1F7A;
+}
+
+body {
+    animation: body-splash steps(1, end) 2.5s forwards;
+    background-color: var(--ui_primary_dark);
+    font-family: 'Amiko';
+    font-weight: 400;
+    margin: 0;
+}
+
+@keyframes body-splash {
+    0% {
+        background-color: var(--ui_primary_dark);
+    }
+
+    100% {
+        background-color: var(--ui_primary_light);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Megrim';
+    font-weight: 700;
+}
+
+html {
+    font-size: 75%;
+}
+
+@media screen and (min-width: 769px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+h1 {
+    font-size: 4.210rem;
+}
+
+h2 {
+    font-size: 3.158rem;
+}
+
+h3 {
+    font-size: 2.369rem;
+}
+
+h4 {
+    font-size: 1.777rem;
+}
+
+h5 {
+    font-size: 1.333rem;
+}
+
+small {
+    font-size: 0.750rem;
+}
+
+/*
+    Splash Screen
+*/
+
+.splash-animation-top,
+.splash-animation-bottom {
+    animation: splash-animation-background 1.5s 1s forwards;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+}
+
+@keyframes splash-animation-background {
+    0% {
+        height: 0;
+    }
+
+    33% {
+        height: 50%;
+    }
+
+    100% {
+        display: none;
+        height: 50%;
+    }
+}
+
+.splash-animation-top {
+    background-color: var(--ui_accent_red);
+    border-bottom: 10px solid var(--ui_primary_dark);
+    top: 0px;
+}
+
+.splash-animation-bottom {
+    background-color: var(--ui_light_1);
+    bottom: 0px;
+    border-top: 10px solid var(--ui_primary_dark);
+}
+
+.splash-menu-screen {
+    animation: splash-animation-menu-screen 1.5s 1s forwards;
+    background-color: var(--ui_primary_dark);
+    border: 20px solid var(--ui_primary_dark);
+    border-radius: 50%;
+    height: 0;
+    left: 50%;
+    max-width: 200px;
+    max-height: 200px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    z-index: 2;
+}
+
+@keyframes splash-animation-menu-screen {
+    67% {
+        background-color: var(--ui_primary_light);
+        border-radius: 50%;
+        border-width: 20px;
+        height: 60vw;
+        max-height: 200px;
+        max-width: 200px;
+        width: 60vw;
+    }
+
+    100% {
+        background-color: var(--ui_primary_light);
+        border-radius: 0px;
+        border-width: 0px;
+        display: none;
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/*
+    Navbar & Footer
+*/
+
+nav {
+    animation: navbar-load 0.5s 2.5s forwards;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 58px;
+    top: -58px;
+    width: 100%;
+    z-index: 99;
+}
+
+@keyframes navbar-load {
+    0% {
+        display: none;
+        top: -58px;
+    }
+
+    100% {
+        display: flex;
+        top: 0;
+    }
+}
+
+.navbar-margin {
+    background-color: var(--ui_primary_light);
+    height: 10px;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+
+    .navbar-bg-accent {
+        clip-path: polygon(1rem 0, 100% 0%, 100% 100%, 0% 100%);
+        height: 48px;
+        position: absolute;
+        right: 0;
+        width: 33%;
+    }
+
+    .navbar-content {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 48px;
+        position: absolute;
+        width: 100%;
+        z-index: 11;
+
+        & h4 {
+            color: var(--ui_primary_light);
+            flex: 2;
+            font-family: 'Pixelify Sans';
+            margin: 0 0 0 20px;
+            text-shadow: 0.125em 0.125em 0 var(--ui_primary_dark);
+            user-select: none;
+        }
+
+        .navbar-settings-container {
+            flex: 1;
+            height: 48px;
+        }
+    }
+}
+
+footer {
+    align-items: center;
+    animation: footer-load 0.5s 2.5s forwards;
+    background-color: var(--ui_primary_dark);
+    bottom: -30px;
+    display: flex;
+    font-family: 'Pixelify Sans';
+    position: fixed;
+    padding: 0 20px;
+    height: 36px;
+    width: 100%;
+    z-index: 99;
+
+    & p {
+        color: white;
+    }
+}
+
+@keyframes footer-load {
+    0% {
+        bottom: -30px;
+        display: none;
+    }
+
+    100% {
+        bottom: 0px;
+        display: flex;
+    }
+}
+
+/*
+    Main Menu and Splash Animation
+*/
+
+.main-menu-section {
+    height: auto;
+    min-height: 100vh;
+}
+
+.main-menu-wrapper {
+    margin: 0 20px;
+}
+
+@media screen and (min-width: 769px) {
+    .main-menu-wrapper {
+        margin: 0 12.5%;
+    }
+}
+
+.main-menu {
+    animation: main-menu-splash steps(1, end) 2.5s forwards;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes main-menu-splash {
+    0% {
+        display: none;
+    }
+
+    100% {
+        display: flex;
+    }
+}
+
+.main-menu-header {
+    align-items: left;
+    animation: main-menu-header 1s forwards;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 10px;
+    height: fit-content;
+    justify-content: center;
+    margin: 150px auto 50px auto;
+
+    #main-menu-header-welcome,
+    #main-menu-header-to,
+    #main-menu-header-professors,
+    #main-menu-header-pc {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: fit-content;
+        margin: 0;
+        user-select: none;
+
+        & h2 {
+            font-family: 'Pokemon-Glyphs';
+            height: fit-content;
+            margin: 0;
+            text-align: center;
+            width: 0.6em;
+        }
+    }
+}
+
+@keyframes main-menu-header {
+    0% {
+        opacity: 0%;
+        transform: translateY(-4.210rem);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(0em);
+    }
+}
+
+.main-menu-content {
+    background-color: var(--ui_primary_light);
+    border: solid 5px var(--ui_light_1);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 36px;
+    justify-content: space-evenly;
+    margin-bottom: 72px;
+    padding: 36px;
+}
+
+.main-menu-game-window {
+    background-color: var(--ui_light_1);
+    border-radius: 12px;
+    height: 206px;
+    max-width: 300px;
+    position: relative;
+    width: 100%;
+
+    .game-window-hover {
+        background-color: transparent;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .game-window-info-title {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 36px;
+        margin-left: 9px;
+        overflow-x: hidden;
+        position: absolute;
+        text-wrap: nowrap;
+        width: calc(100% - 18px);
+        z-index: 1;
+
+        & p {
+            color: var(--ui_primary_light);
+            margin: 0;
+            text-shadow: 1px 1px 0 var(--ui_primary_dark);
+        }
+    }
+
+    .game-window-info-bg {
+        align-items: center;
+        border-radius: 12px 24px 0 0;
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+        height: 36px;
+        padding: 0 0 0 12px;
+
+        
+
+        .game-window-info-accent {
+            border-radius: 0 12px 0 0;
+            clip-path: polygon(15% 0, 100% 0%, 100% 100%, 0% 100%);
+            height: 36px;
+            position: absolute;
+            right: 0;
+            width: 30%;
+        }
+    }
+}
+
+/*
+    Game Window Colour Change
+*/
+
+.game-window-colour-change-default {
+    background-color: var(--ui_primary_dark);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-default-accent {
+    background-color: var(--ui_dark_2);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-rby {
+    background-color: var(--pkmn_red);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-rby-accent {
+    background-color: var(--pkmn_blue);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-gsc,
+.game-window-colour-change-hgss {
+    background-color: var(--pkmn_gold);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-gsc-accent,
+.game-window-colour-change-hgss-accent {
+    background-color: var(--pkmn_silver);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-rbe,
+.game-window-colour-change-oras {
+    background-color: var(--pkmn_ruby);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-rbe-accent,
+.game-window-colour-change-oras-accent {
+    background-color: var(--pkmn_sapphire);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-frlg {
+    background-color: var(--pkmn_fireRed);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-frlg-accent {
+    background-color: var(--pkmn_leafGreen);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-dppt,
+.game-window-colour-change-bdsp {
+    background-color: var(--pkmn_diamond);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-dppt-accent,
+.game-window-colour-change-bdsp-accent {
+    background-color: var(--pkmn_pearl);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-bw,
+.game-window-colour-change-b2w2 {
+    background-color: var(--pkmn_black);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-bw-accent,
+.game-window-colour-change-b2w2-accent {
+    background-color: var(--pkmn_white);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-xy {
+    background-color: var(--pkmn_x);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-xy-accent {
+    background-color: var(--pkmn_y);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-sm,
+.game-window-colour-change-usum {
+    background-color: var(--pkmn_sun);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-sm-accent,
+.game-window-colour-change-usum-accent {
+    background-color: var(--pkmn_moon);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-lgpe {
+    background-color: var(--pkmn_letsGoPikachu);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-lgpe-accent {
+    background-color: var(--pkmn_letsGoEevee);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-swsh {
+    background-color: var(--pkmn_sword);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-swsh-accent {
+    background-color: var(--pkmn_shield);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-lga {
+    background-color: var(--pkmn_legendsArceus);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-lga-accent {
+    background-color: var(--pkmn_legendsArceusAccent);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-sv {
+    background-color: var(--pkmn_scarlet);
+    transition: background-color 0.2s;
+}
+
+.game-window-colour-change-sv-accent {
+    background-color: var(--pkmn_violet);
+    transition: background-color 0.2s;
+}
