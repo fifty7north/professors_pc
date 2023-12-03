@@ -1,9 +1,9 @@
-body {
+.body-splash {
     animation: body-splash steps(1, end) 2.5s forwards;
     background-color: var(--ui_primary_dark);
 }
 
-nav {
+.nav-splash {
     animation: navbar-load 0.5s 2.5s forwards;
     top: -58px;
 }
@@ -20,7 +20,7 @@ nav {
     }
 }
 
-footer {
+.footer-splash {
     animation: footer-load 0.5s 2.5s forwards;
     bottom: -30px;
 }
@@ -33,6 +33,20 @@ footer {
 
     100% {
         bottom: 0px;
+        display: flex;
+    }
+}
+
+.main-menu-splash {
+    animation: main-menu-splash steps(1, end) 2.5s forwards;
+}
+
+@keyframes main-menu-splash {
+    0% {
+        display: none;
+    }
+
+    100% {
         display: flex;
     }
 }

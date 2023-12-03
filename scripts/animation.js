@@ -2,36 +2,40 @@ const letters = 'abcdefghijklmnopqrztuvwxyz'
 
 /*Main menu header*/
 
-setTimeout(() => {
-    document.querySelectorAll('.main-menu-header-text').forEach(letter => {
-        let id = letter.id.substring(22);
-        let iterations = 0;
-        let interval = setInterval(() => {
-            letter.innerHTML = letters[Math.floor(Math.random() * 26)];
-            if (iterations >= id * 2) {
-                letter.innerHTML = letter.dataset.letter;
-                document.getElementById(letter.id).style.fontFamily = 'Megrim';
-                clearInterval(interval);
-            }
-            iterations++;
-        }, 50);
-    });
-}, 2500);
+function mainMenuHeaderFade(delay) {
+    setTimeout(() => {
+        document.querySelectorAll('.main-menu-header-text').forEach(letter => {
+            let id = letter.id.substring(22);
+            let iterations = 0;
+            let interval = setInterval(() => {
+                letter.innerHTML = letters[Math.floor(Math.random() * 26)];
+                if (iterations >= id * 2) {
+                    letter.innerHTML = letter.dataset.letter;
+                    document.getElementById(letter.id).style.fontFamily = 'Megrim';
+                    clearInterval(interval);
+                }
+                iterations++;
+            }, 50);
+        });
+    }, delay);
+}
 
 /*Main menu content fade in animation*/
 
-setTimeout(() => {
-    let gameWindows = [];
-    document.querySelectorAll('.main-menu-game-window').forEach(game => {
-        gameWindows.push(game)
-    });
-    for (let i = 0; i < gameWindows.length; i++) {
-        let interval = i * 100 + 100;
-        setTimeout(() => {
-            gameWindows[i].classList.add('game-window-fade-in');
-        }, interval);
-    }
-}, 2600);
+function mainMenuContentCascadingFade(delay) {
+    setTimeout(() => {
+        let gameWindows = [];
+        document.querySelectorAll('.main-menu-game-window').forEach(game => {
+            gameWindows.push(game)
+        });
+        for (let i = 0; i < gameWindows.length; i++) {
+            let interval = i * 100 + 100;
+            setTimeout(() => {
+                gameWindows[i].classList.add('game-window-fade-in');
+            }, interval);
+        }
+    }, delay);    
+}
 
 /*Main menu game window hover*/
 
@@ -120,3 +124,5 @@ document.querySelectorAll('.game-window-hover').forEach(game => {
         }, spriteAnimationDelay);
     });
 });
+
+export {mainMenuHeaderFade, mainMenuContentCascadingFade}

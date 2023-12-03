@@ -186,6 +186,7 @@ nav {
 footer {
     align-items: center;
     background-color: var(--ui_primary_dark);
+    bottom: 0px;
     display: flex;
     font-family: 'Pixelify Sans';
     position: fixed;
@@ -219,21 +220,10 @@ footer {
 }
 
 .main-menu {
-    animation: main-menu-splash steps(1, end) 2.5s forwards;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-}
-
-@keyframes main-menu-splash {
-    0% {
-        display: none;
-    }
-
-    100% {
-        display: flex;
-    }
 }
 
 .main-menu-header {
