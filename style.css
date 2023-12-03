@@ -6,10 +6,13 @@
 }
 
 :root {
+    /*UI colours*/
     --ui_primary_light: #FCFCFC;
     --ui_primary_dark: #0D0D0D;
-    --ui_accent_red: #C91D2B;
-    --ui_accent_green: #2BC91D;
+    --ui_accent_red_light: #C91D2B;
+    --ui_accent_red_dark: #86131D;
+    --ui_accent_green_light: #ABE830;
+    --ui_accent_green_dark: #77B300;
     --ui_accent_pokedexBorder: #CCFF33;
     --ui_light_1: #EBEBEB;
     --ui_light_2: #D9D9D9;
@@ -156,7 +159,7 @@ small {
 }
 
 .splash-animation-top {
-    background-color: var(--ui_accent_red);
+    background-color: var(--ui_accent_red_light);
     border-bottom: 10px solid var(--ui_primary_dark);
     top: 0px;
 }
@@ -448,16 +451,22 @@ footer {
         padding: 0 0 0 12px;
 
         .game-window-info-accent {
-            border-radius: 0 12px 0 0;
-            clip-path: polygon(15% 0, 100% 0%, 100% 100%, 0% 100%);
-            height: 36px;
+            clip-path: polygon(33% 0, 100% 0%, 100% 100%, 0% 100%);
             position: absolute;
+            width: 50%;
+        }
+
+        .game-window-info-accent {
+            border-radius: 0 12px 24px 0;
+            height: 100%;
             right: 0;
-            width: 30%;
+            top: 0;
         }
     }
 
     .game-window-image-container {
+        background-color: var(--ui_light_1);
+        border-radius: 0 0 12px 12px;
         height: 144px;
         overflow: hidden;
         position: relative;
@@ -477,103 +486,81 @@ footer {
                 color: var(--ui_accent_pokedexBorder);
                 font-family: 'Pokemon-Glyphs';
                 margin: 4px;
+                position: absolute;
             }
-        }
 
-        .game-window-image {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            height: calc(100% - 24px);
-            padding: 12px;
-            position: absolute;
-            transition: all 0.25s;
-            width: calc(100% - 24px);
-
-            .game-window-image-sprite {
+            .game-window-image-grid {
                 align-items: center;
-                display: flex;
+                display: grid;
+                grid-auto-rows: 48px;
+                grid-template-columns: repeat(3, 48px);
+                gap: 4px;
                 justify-content: center;
-                min-width: fit-content;
-                transition: all 0.25s;
-                width: 33%;
+                margin-top: 10px;
+                height: 100%;
+                width: 100%;
+    
+                & div {
+                    display: flex;
+                    height: 48px;
+                    justify-content: center;
+                    width: 100%;
 
-                & img {
-                    height: 70%;
-                    transition: all 0.25s;
+                    .menu-sprite-default {
+                        background-color: rgba(191, 191, 191, 0.5);
+                        border-radius: 8px;
+                        filter: grayscale(100%);
+                        height: 36px;
+                        padding: 6px;
+                        transition: all 0.2s;
+                    }
+
+                    .menu-sprite-hover {
+                        background-color: rgba(191, 191, 191, 0.5);
+                        border-radius: 8px;
+                        filter: grayscale(0%);
+                        height: 44px;
+                        padding: 2px;
+                        transition: all 0.2s;
+                    }
                 }
             }
         }
 
-        .game-window-image-hover {
-            align-self: center;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            height: calc(100% - 24px);
-            margin-left: -5%;
-            padding: 12px;
+        .game-window-image-bg-accent-light-default,
+        .game-window-image-bg-accent-light-hover,
+        .game-window-image-bg-accent-dark-default,
+        .game-window-image-bg-accent-dark-hover {
+            border-radius: 0 24px 12px 0;
+            bottom: 0;
+            clip-path: polygon(33% 0, 100% 0%, 100% 100%, 0% 100%);
+            height: calc(100% + 36px);
             position: absolute;
-            transition: all 0.25s;
-            width: calc(110% - 24px);
-
-            .game-window-image-sprite {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-                min-width: fit-content;
-                transition: all 0.25s;
-                width: 33%;
-
-                & img {
-                    height: 80%;
-                    transition: all 0.25s;
-                }
-            }
+            width: 50%;
         }
 
-        .game-window-image-bg {
-            align-items: center;
-            border-radius: 0 0 12px 12px;
-            display: flex;
-            height: 100%;
-            justify-content: center;
-            overflow: hidden;
-            position: absolute;
-            transition: all 0.25s;
-            width: 100%;
-            z-index: -1;
-
-            .game-window-image-bg-filter {
-                background-color: var(--ui_light_2);
-                height: 100%;
-                position: absolute;
-                opacity: 100%;
-                transition: all 0.25s;
-                width: 100%;
-            }
+        .game-window-image-bg-accent-light-default {
+            background-color: var(--ui_accent_red_light);
+            right: -15%;
+            transition: all 0.2s;
         }
 
-        .game-window-image-bg-hover {
-            align-items: center;
-            border-radius: 0 0 12px 12px;
-            display: flex;
-            height: 100%;
-            justify-content: center;
-            overflow: hidden;
-            position: absolute;
-            transition: all 0.25s;
-            width: 100%;
-            z-index: -1;
+        .game-window-image-bg-accent-light-hover {
+            background-color: var(--ui_accent_green_light);
+            right: -15%;
+            transition: all 0.2s;
+        }
 
-            .game-window-image-bg-filter {
-                background-color: var(--ui_light_3);
-                height: 100%;
-                position: absolute;
-                opacity: 100%;
-                transition: all 0.25s;
-                width: 100%;
-            }
+        .game-window-image-bg-accent-dark-default {
+            background-color: var(--ui_accent_red_dark);
+            right: 0;
+            transition: all 0.2s;
+        }
+
+        .game-window-image-bg-accent-dark-hover {
+            background-color: var(--ui_accent_green_dark);
+            right: 0;
+            transition: all 0.2s;
         }
     }
 }

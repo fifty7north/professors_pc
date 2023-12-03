@@ -58,18 +58,33 @@ document.querySelectorAll('.game-window-hover').forEach(game => {
         let infoBg1 = game.parentNode.querySelector('.game-window-info-bg');
         let infoBg2 = game.parentNode.querySelector('.game-window-info-accent');
         let id = infoBg1.id.substring(20);
-        infoBg1.classList.add('game-window-colour-change-'+id);
+        infoBg1.classList.add('game-window-colour-change-' + id);
         infoBg1.classList.remove('game-window-colour-change-default');
-        infoBg2.classList.add('game-window-colour-change-'+id+'-accent');
+        infoBg2.classList.add('game-window-colour-change-' + id + '-accent');
         infoBg2.classList.remove('game-window-colour-change-default-accent');
-        //pokemon sprites hover effect
-        let spriteContainer = game.parentNode.querySelector('.game-window-image');
-        spriteContainer.classList.add('game-window-image-hover');
-        spriteContainer.classList.remove('game-window-image');
-        //background image hover effect
-        let background = game.parentNode.querySelector('.game-window-image-bg');
-        background.classList.add('game-window-image-bg-hover');
-        background.classList.remove('game-window-image-bg');
+        //image bg colour change
+        let imageBg1 = game.parentNode.querySelector('.game-window-image-bg-accent-light-default');
+        let imageBg2 = game.parentNode.querySelector('.game-window-image-bg-accent-dark-default');
+        imageBg1.classList.add('game-window-image-bg-accent-light-hover');
+        imageBg1.classList.remove('game-window-image-bg-accent-light-default');
+        imageBg2.classList.add('game-window-image-bg-accent-dark-hover');
+        imageBg2.classList.remove('game-window-image-bg-accent-dark-default');
+        //sprite animation
+        let spriteAnimationDelay = 0;
+        game.parentNode.querySelectorAll('.menu-sprite-hover').forEach(sprite => {
+            spriteAnimationDelay = spriteAnimationDelay + 50;
+        });
+        setTimeout(() => {
+            let menuSprite = game.parentNode.querySelectorAll('.menu-sprite-default');
+            let menuSpriteDelay = -50;
+            menuSprite.forEach(sprite => {
+                menuSpriteDelay = menuSpriteDelay + 50;
+                setTimeout(() => {
+                    sprite.classList.add('menu-sprite-hover');
+                    sprite.classList.remove('menu-sprite-default');
+                }, menuSpriteDelay);
+            });
+        }, spriteAnimationDelay);
     });
     game.addEventListener('mouseleave', () => {
         //info bar colour change
@@ -77,16 +92,31 @@ document.querySelectorAll('.game-window-hover').forEach(game => {
         let infoBg2 = game.parentNode.querySelector('.game-window-info-accent');
         let id = infoBg1.id.substring(20);
         infoBg1.classList.add('game-window-colour-change-default');
-        infoBg1.classList.remove('game-window-colour-change-'+id);
+        infoBg1.classList.remove('game-window-colour-change-' + id);
         infoBg2.classList.add('game-window-colour-change-default-accent');
-        infoBg2.classList.remove('game-window-colour-change-'+id+'-accent');
-        //pokemon sprites hover effect
-        let spriteContainer = game.parentNode.querySelector('.game-window-image-hover');
-        spriteContainer.classList.add('game-window-image');
-        spriteContainer.classList.remove('game-window-image-hover');
-        //background image hover effect
-        let background = game.parentNode.querySelector('.game-window-image-bg-hover');
-        background.classList.add('game-window-image-bg');
-        background.classList.remove('game-window-image-bg-hover');
+        infoBg2.classList.remove('game-window-colour-change-' + id + '-accent');
+        //image bg colour change
+        let imageBg1 = game.parentNode.querySelector('.game-window-image-bg-accent-light-hover');
+        let imageBg2 = game.parentNode.querySelector('.game-window-image-bg-accent-dark-hover');
+        imageBg1.classList.add('game-window-image-bg-accent-light-default');
+        imageBg1.classList.remove('game-window-image-bg-accent-light-hover');
+        imageBg2.classList.add('game-window-image-bg-accent-dark-default');
+        imageBg2.classList.remove('game-window-image-bg-accent-dark-hover');
+        //sprite animation
+        let spriteAnimationDelay = 0;
+        game.parentNode.querySelectorAll('.menu-sprite-default').forEach(sprite => {
+            spriteAnimationDelay = spriteAnimationDelay + 50;
+        });
+        setTimeout(() => {
+            let menuSprite = game.parentNode.querySelectorAll('.menu-sprite-hover');
+            let menuSpriteDelay = -50;
+            menuSprite.forEach(sprite => {
+                menuSpriteDelay = menuSpriteDelay + 50;
+                setTimeout(() => {
+                    sprite.classList.add('menu-sprite-default');
+                    sprite.classList.remove('menu-sprite-hover');
+                }, menuSpriteDelay);
+            });
+        }, spriteAnimationDelay);
     });
 });
