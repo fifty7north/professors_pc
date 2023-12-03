@@ -1,3 +1,7 @@
+/*
+    Whole page
+*/
+
 .body-splash {
     animation: body-splash steps(1, end) 2.5s forwards;
     background-color: var(--ui_primary_dark);
@@ -8,47 +12,13 @@
     top: -58px;
 }
 
-@keyframes navbar-load {
-    0% {
-        display: none;
-        top: -58px;
-    }
-
-    100% {
-        display: flex;
-        top: 0;
-    }
-}
-
 .footer-splash {
     animation: footer-load 0.5s 2.5s forwards;
     bottom: -30px;
 }
 
-@keyframes footer-load {
-    0% {
-        bottom: -30px;
-        display: none;
-    }
-
-    100% {
-        bottom: 0px;
-        display: flex;
-    }
-}
-
 .main-menu-splash {
     animation: main-menu-splash steps(1, end) 2.5s forwards;
-}
-
-@keyframes main-menu-splash {
-    0% {
-        display: none;
-    }
-
-    100% {
-        display: flex;
-    }
 }
 
 /*
@@ -61,21 +31,6 @@
     box-sizing: border-box;
     position: absolute;
     width: 100%;
-}
-
-@keyframes splash-animation-background {
-    0% {
-        height: 0;
-    }
-
-    33% {
-        height: 50%;
-    }
-
-    100% {
-        display: none;
-        height: 50%;
-    }
 }
 
 .splash-animation-top {
@@ -104,6 +59,59 @@
     transform: translate(-50%, -50%);
     width: 0;
     z-index: 2;
+}
+
+/*
+    Animation keyframes
+*/
+
+@keyframes footer-load {
+    0% {
+        bottom: -30px;
+        display: none;
+    }
+
+    100% {
+        bottom: 0px;
+        display: flex;
+    }
+}
+
+@keyframes main-menu-splash {
+    0% {
+        display: none;
+    }
+
+    100% {
+        display: flex;
+    }
+}
+
+@keyframes navbar-load {
+    0% {
+        display: none;
+        top: -58px;
+    }
+
+    100% {
+        display: flex;
+        top: 0;
+    }
+}
+
+@keyframes splash-animation-background {
+    0% {
+        height: 0;
+    }
+
+    33% {
+        height: 50%;
+    }
+
+    100% {
+        display: none;
+        height: 50%;
+    }
 }
 
 @keyframes splash-animation-menu-screen {
