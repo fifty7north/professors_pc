@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: Pokemon-Glyphs;
-    src: url('./typefaces/ThraexSansRegular-v1000.ttf');
+    src: url('./ThraexSansRegular-v1000.ttf');
 }
 
 :root {
@@ -13,7 +13,6 @@
     --ui_accent_red_dark: #86131D;
     --ui_accent_green_light: #ABE830;
     --ui_accent_green_dark: #77B300;
-    --ui_accent_pokedexBorder: #CCFF33;
     --ui_light_1: #EBEBEB;
     --ui_light_2: #D9D9D9;
     --ui_light_3: #BFBFBF;
@@ -71,8 +70,6 @@
 }
 
 body {
-    animation: body-splash steps(1, end) 2.5s forwards;
-    background-color: var(--ui_primary_dark);
     font-family: 'Amiko';
     font-weight: 400;
     margin: 0;
@@ -132,108 +129,16 @@ small {
 }
 
 /*
-    Splash Screen
-*/
-
-.splash-animation-top,
-.splash-animation-bottom {
-    animation: splash-animation-background 1.5s 1s forwards;
-    box-sizing: border-box;
-    position: absolute;
-    width: 100%;
-}
-
-@keyframes splash-animation-background {
-    0% {
-        height: 0;
-    }
-
-    33% {
-        height: 50%;
-    }
-
-    100% {
-        display: none;
-        height: 50%;
-    }
-}
-
-.splash-animation-top {
-    background-color: var(--ui_accent_red_light);
-    border-bottom: 10px solid var(--ui_primary_dark);
-    top: 0px;
-}
-
-.splash-animation-bottom {
-    background-color: var(--ui_light_1);
-    bottom: 0px;
-    border-top: 10px solid var(--ui_primary_dark);
-}
-
-.splash-menu-screen {
-    animation: splash-animation-menu-screen 1.5s 1s forwards;
-    background-color: var(--ui_primary_dark);
-    border: 20px solid var(--ui_primary_dark);
-    border-radius: 50%;
-    height: 0;
-    left: 50%;
-    max-width: 200px;
-    max-height: 200px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
-    z-index: 2;
-}
-
-@keyframes splash-animation-menu-screen {
-    67% {
-        background-color: var(--ui_primary_light);
-        border-radius: 50%;
-        border-width: 20px;
-        height: 60vw;
-        max-height: 200px;
-        max-width: 200px;
-        width: 60vw;
-    }
-
-    100% {
-        background-color: var(--ui_primary_light);
-        border-radius: 0px;
-        border-width: 0px;
-        display: none;
-        height: 100%;
-        max-height: 100%;
-        max-width: 100%;
-        width: 100%;
-    }
-}
-
-/*
     Navbar & Footer
 */
 
 nav {
-    animation: navbar-load 0.5s 2.5s forwards;
     display: flex;
     flex-direction: column;
     position: fixed;
     height: 58px;
-    top: -58px;
     width: 100%;
     z-index: 99;
-}
-
-@keyframes navbar-load {
-    0% {
-        display: none;
-        top: -58px;
-    }
-
-    100% {
-        display: flex;
-        top: 0;
-    }
 }
 
 .navbar-margin {
@@ -280,9 +185,7 @@ nav {
 
 footer {
     align-items: center;
-    animation: footer-load 0.5s 2.5s forwards;
     background-color: var(--ui_primary_dark);
-    bottom: -30px;
     display: flex;
     font-family: 'Pixelify Sans';
     position: fixed;
@@ -293,18 +196,6 @@ footer {
 
     & p {
         color: white;
-    }
-}
-
-@keyframes footer-load {
-    0% {
-        bottom: -30px;
-        display: none;
-    }
-
-    100% {
-        bottom: 0px;
-        display: flex;
     }
 }
 
@@ -390,8 +281,7 @@ footer {
 
 .main-menu-content {
     animation: menu-fade-in 1s forwards;
-    background-color: var(--ui_primary_light);
-    border: solid 5px var(--ui_light_1);
+    background-color: var(--ui_light_1);
     border-radius: 24px;
     display: flex;
     flex-direction: row;
@@ -465,7 +355,7 @@ footer {
     }
 
     .game-window-image-container {
-        background-color: var(--ui_light_1);
+        background-color: var(--ui_primary_light);
         border-radius: 0 0 12px 12px;
         height: 144px;
         overflow: hidden;
@@ -473,7 +363,7 @@ footer {
         width: 100%;
 
         .game-window-image-border {
-            border: 4px solid var(--ui_accent_pokedexBorder);
+            border: 4px solid #CCFF33;
             border-radius: 0 24px;
             box-sizing: border-box;
             height: calc(100% - 16px);
@@ -483,7 +373,7 @@ footer {
             z-index: 1;
 
             & p {
-                color: var(--ui_accent_pokedexBorder);
+                color: #CCFF33;
                 font-family: 'Pokemon-Glyphs';
                 margin: 4px;
                 position: absolute;
@@ -501,14 +391,14 @@ footer {
                 width: 100%;
     
                 & div {
+                    background-color: rgba(235, 235, 235, 0.4);
+                    border-radius: 8px;
                     display: flex;
                     height: 48px;
                     justify-content: center;
                     width: 100%;
 
                     .menu-sprite-default {
-                        background-color: rgba(191, 191, 191, 0.5);
-                        border-radius: 8px;
                         filter: grayscale(100%);
                         height: 36px;
                         padding: 6px;
@@ -516,8 +406,6 @@ footer {
                     }
 
                     .menu-sprite-hover {
-                        background-color: rgba(191, 191, 191, 0.5);
-                        border-radius: 8px;
                         filter: grayscale(0%);
                         height: 44px;
                         padding: 2px;

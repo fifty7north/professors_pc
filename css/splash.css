@@ -1,0 +1,116 @@
+body {
+    animation: body-splash steps(1, end) 2.5s forwards;
+    background-color: var(--ui_primary_dark);
+}
+
+nav {
+    animation: navbar-load 0.5s 2.5s forwards;
+    top: -58px;
+}
+
+@keyframes navbar-load {
+    0% {
+        display: none;
+        top: -58px;
+    }
+
+    100% {
+        display: flex;
+        top: 0;
+    }
+}
+
+footer {
+    animation: footer-load 0.5s 2.5s forwards;
+    bottom: -30px;
+}
+
+@keyframes footer-load {
+    0% {
+        bottom: -30px;
+        display: none;
+    }
+
+    100% {
+        bottom: 0px;
+        display: flex;
+    }
+}
+
+/*
+    Main splash animation
+*/
+
+.splash-animation-top,
+.splash-animation-bottom {
+    animation: splash-animation-background 1.5s 1s forwards;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+}
+
+@keyframes splash-animation-background {
+    0% {
+        height: 0;
+    }
+
+    33% {
+        height: 50%;
+    }
+
+    100% {
+        display: none;
+        height: 50%;
+    }
+}
+
+.splash-animation-top {
+    background-color: var(--ui_accent_red_light);
+    border-bottom: 10px solid var(--ui_primary_dark);
+    top: 0px;
+}
+
+.splash-animation-bottom {
+    background-color: var(--ui_light_1);
+    bottom: 0px;
+    border-top: 10px solid var(--ui_primary_dark);
+}
+
+.splash-menu-screen {
+    animation: splash-animation-menu-screen 1.5s 1s forwards;
+    background-color: var(--ui_primary_dark);
+    border: 20px solid var(--ui_primary_dark);
+    border-radius: 50%;
+    height: 0;
+    left: 50%;
+    max-width: 200px;
+    max-height: 200px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    z-index: 2;
+}
+
+@keyframes splash-animation-menu-screen {
+    67% {
+        background-color: var(--ui_primary_light);
+        border-radius: 50%;
+        border-width: 20px;
+        height: 60vw;
+        max-height: 200px;
+        max-width: 200px;
+        width: 60vw;
+    }
+
+    100% {
+        background-color: var(--ui_primary_light);
+        border-radius: 0px;
+        border-width: 0px;
+        display: none;
+        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+}

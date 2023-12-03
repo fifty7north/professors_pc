@@ -1,0 +1,11 @@
+body {
+    background-color: var(--ui_primary_light);
+}
+
+nav {
+    top: 0px;
+}
+
+footer {
+    bottom: 0px;
+}
