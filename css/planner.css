@@ -20,26 +20,71 @@ nav {
 }
 
 .page-bg-accent {
-    clip-path: polygon(33% 0, 100% 0%, 100% 100%, 0% 100%);
-    height: 100vh;
+    bottom: 0;
+    clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0% 100%);
+    height: 50vh;
     opacity: 1;
     position: fixed;
-    width: 50%;
+    width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+    .page-bg-accent {
+        clip-path: polygon(33% 0, 100% 0%, 100% 100%, 0% 100%);
+        height: 100vh;
+        opacity: 1;
+        position: fixed;
+        width: 50%;
+    }
 }
 
 #page-bg-accent-light {
-    animation: page-bg-accent-light-fly-in 0.5s cubic-bezier(.4,.8,.6,1) forwards;
+    animation: page-bg-accent-light-fly-in-mobile 0.5s cubic-bezier(.4,.8,.6,1) forwards;
     background-color: var(--ui_accent_green_light);
     right: 0;
 }
 
-#page-bg-accent-dark {
-    animation: page-bg-accent-dark-fly-in 0.5s cubic-bezier(.4,.8,.6,1) forwards;
-    background-color: var(--ui_accent_green_dark);
-    right: 10%;
+@media screen and (min-width: 769px) {
+    #page-bg-accent-light {
+        animation: page-bg-accent-light-fly-in-desktop 0.5s cubic-bezier(.4,.8,.6,1) forwards;
+    }
 }
 
-@keyframes page-bg-accent-light-fly-in {
+#page-bg-accent-dark {
+    animation: page-bg-accent-dark-fly-in-mobile 0.5s cubic-bezier(.4,.8,.6,1) forwards;
+    bottom: 5%;
+    background-color: var(--ui_accent_green_dark);
+}
+
+@media screen and (min-width: 769px) {
+    #page-bg-accent-dark {
+        animation: page-bg-accent-dark-fly-in-desktop 0.5s cubic-bezier(.4,.8,.6,1) forwards;
+        bottom: 0;
+        right: 10%;
+    }
+}
+
+@keyframes page-bg-accent-light-fly-in-mobile {
+    0% {
+        bottom: -70%;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes page-bg-accent-dark-fly-in-mobile {
+    0% {
+        bottom: -65%;
+    }
+
+    100% {
+        bottom: 5%;
+    }
+}
+
+@keyframes page-bg-accent-light-fly-in-desktop {
     0% {
         right: -70%;
     }
@@ -49,7 +94,7 @@ nav {
     }
 }
 
-@keyframes page-bg-accent-dark-fly-in {
+@keyframes page-bg-accent-dark-fly-in-desktop {
     0% {
         right: -60%;
     }
