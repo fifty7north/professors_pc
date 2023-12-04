@@ -64,6 +64,14 @@ nav {
     }
 }
 
+footer {
+    bottom: 0px;
+}
+
+/*
+    Animation keyframes
+*/
+
 @keyframes page-bg-accent-light-fly-in-mobile {
     0% {
         bottom: -70%;
@@ -102,8 +110,4 @@ nav {
     100% {
         right: 10%;
     }
-}
-
-footer {
-    bottom: 0px;
 }
