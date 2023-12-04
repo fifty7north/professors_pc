@@ -13,18 +13,21 @@ if (sessionStorage.getItem('splash') == null) { //on first load
     document.querySelector('footer').classList.add('footer-splash');
     document.querySelector('.main-menu').classList.add('main-menu-splash');
 
-    //Plays on load animtions and displays main menu content after delay
+    //Plays on load animations and displays main menu content after delay
 
+    setTimeout(() => {document.querySelector('.page-bg').classList.add('page-bg-fade-in')}, 2500);
     mainMenuHeaderFade(2500);
     mainMenuContentCascadingFade(2600);
 
     //adds value to session storage to ensure the splash plays only once
 
     sessionStorage.setItem('splash', 'animation played');
+
 } else { //on not first load
 
-    //Plays on load animtions and displays main menu content immediately
+    //Plays on load animations and displays main menu content immediately
 
+    setTimeout(() => {document.querySelector('.page-bg').classList.add('page-bg-fade-in')}, 0);
     mainMenuHeaderFade(0)
     mainMenuContentCascadingFade(100);
     document.querySelector('.splash-screen-section').style.display = 'none';
