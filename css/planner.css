@@ -6,6 +6,59 @@ nav {
     top: 0px;
 }
 
+.page-bg {
+    background-color: var(--ui_primary_light);
+    background-image:  linear-gradient(135deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(225deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(45deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(315deg, var(--ui_light_1) 25%, var(--ui_primary_light) 25%);
+    background-position:  75px 0, 75px 0, 0 0, 0 0;
+    background-size: 150px 150px;
+    background-repeat: repeat;
+    height: 100%;
+    opacity: 0.25;
+    position: fixed;
+    width: 100%;
+    z-index: -100;
+}
+
+.page-bg-accent {
+    clip-path: polygon(33% 0, 100% 0%, 100% 100%, 0% 100%);
+    height: 100vh;
+    opacity: 1;
+    position: fixed;
+    width: 50%;
+}
+
+#page-bg-accent-light {
+    animation: page-bg-accent-light-fly-in 0.5s cubic-bezier(.4,.8,.6,1) forwards;
+    background-color: var(--ui_accent_green_light);
+    right: 0;
+}
+
+#page-bg-accent-dark {
+    animation: page-bg-accent-dark-fly-in 0.5s cubic-bezier(.4,.8,.6,1) forwards;
+    background-color: var(--ui_accent_green_dark);
+    right: 10%;
+}
+
+@keyframes page-bg-accent-light-fly-in {
+    0% {
+        right: -70%;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes page-bg-accent-dark-fly-in {
+    0% {
+        right: -60%;
+    }
+
+    100% {
+        right: 10%;
+    }
+}
+
 footer {
     bottom: 0px;
 }

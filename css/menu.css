@@ -9,14 +9,21 @@
     background-size: 150px 150px;
     background-repeat: repeat;
     height: 100%;
-    opacity: 0;
     position: fixed;
     width: 100%;
     z-index: -100;
 }
 
+.page-bg-splash {
+    opacity: 0;
+}
+
 .page-bg-fade-in {
     animation: page-bg-fade-in 1s forwards;
+}
+
+.page-bg-no-splash {
+    opacity: 0.25;
 }
 
 /*

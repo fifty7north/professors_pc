@@ -15,6 +15,7 @@ if (sessionStorage.getItem('splash') == null) { //on first load
 
     //Plays on load animations and displays main menu content after delay
 
+    document.querySelector('.page-bg').classList.add('page-bg-splash');
     setTimeout(() => {document.querySelector('.page-bg').classList.add('page-bg-fade-in')}, 2500);
     mainMenuHeaderFade(2500);
     mainMenuContentCascadingFade(2600);
@@ -27,7 +28,7 @@ if (sessionStorage.getItem('splash') == null) { //on first load
 
     //Plays on load animations and displays main menu content immediately
 
-    setTimeout(() => {document.querySelector('.page-bg').classList.add('page-bg-fade-in')}, 0);
+    document.querySelector('.page-bg').classList.add('page-bg-no-splash');
     mainMenuHeaderFade(0)
     mainMenuContentCascadingFade(100);
     document.querySelector('.splash-screen-section').style.display = 'none';
