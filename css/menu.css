@@ -1,3 +1,7 @@
+/*
+    Whole page
+*/
+
 .page-bg {
     background-color: var(--ui_primary_light);
     background-image:  linear-gradient(135deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(225deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(45deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(315deg, var(--ui_light_1) 25%, var(--ui_primary_light) 25%);
