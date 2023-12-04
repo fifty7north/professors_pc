@@ -26,6 +26,7 @@ nav {
     opacity: 1;
     position: fixed;
     width: 100%;
+    z-index: -100;
 }
 
 @media screen and (min-width: 769px) {
@@ -40,7 +41,7 @@ nav {
 
 #page-bg-accent-light {
     animation: page-bg-accent-light-fly-in-mobile 0.5s cubic-bezier(.4,.8,.6,1) forwards;
-    background-color: var(--ui_accent_green_light);
+    background-color: var(--ui_accent_red_light);
     right: 0;
 }
 
@@ -53,7 +54,7 @@ nav {
 #page-bg-accent-dark {
     animation: page-bg-accent-dark-fly-in-mobile 0.5s cubic-bezier(.4,.8,.6,1) forwards;
     bottom: 5%;
-    background-color: var(--ui_accent_green_dark);
+    background-color: var(--ui_accent_red_dark);
 }
 
 @media screen and (min-width: 769px) {
@@ -66,6 +67,80 @@ nav {
 
 footer {
     bottom: 0px;
+}
+
+/*
+    Current team screen
+*/
+
+/*
+    Pokemon select screen
+*/
+
+.pokemon-section {
+    display: flex;
+    justify-content: right;
+    min-height: calc(100% - 84px);
+    height: auto;
+    padding: 48px 0 36px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+
+    .pokemon-info {
+        height: calc(100vh - 84px);
+        left: 0;
+        position: fixed;
+        width: 50%;
+    }
+}
+
+.pokemon-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: auto;
+    margin: 48px 0;
+    padding: 0;
+    width: 50%;
+}
+
+.pokemon-entry {
+    background-color: black;
+    border-radius: 36px 0 0 36px;
+    display: flex;
+    height: 72px;
+    list-style: none;
+    position: relative;
+    width: 100%;
+
+    .pokemon-entry-info {
+        align-items: center;
+        display: flex;
+        gap: 4%;
+        height: 60px;
+        justify-content: left;
+        margin: 6px;
+        width: 75%;
+
+        & img {
+            background-color: var(--ui_primary_light);
+            border-radius: 100%;
+            height: 100%;
+        }
+
+        & p {
+            color: white;
+            margin: 0;
+        }
+    }
+
+    .pokemon-entry-type {
+        background-color: var(--ui_dark_1);
+        clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%);
+        height: 100%;
+        width: 25%;
+    }
 }
 
 /*
