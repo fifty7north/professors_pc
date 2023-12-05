@@ -262,9 +262,10 @@ document.querySelectorAll('.pokemon-entry').forEach(entry => {
         let pokemonSelect = entry.id.substring(14);
         let pokemon = gamePokemonData.find(x => x[0] == pokemonSelect);
 
-        //
+        //Updates pokemon info image, header and data elements
 
         document.getElementById('selected-pokemon-image').setAttribute('src', './images/pokemon_sprites/' + pokemon[0] + '.png');
+        document.getElementById('selected-pokemon-image').setAttribute('alt', pokemon[0]);
         document.getElementById('selected-pokemon-data-name').innerHTML = pokemon[1][0]['name'];
         let typeProcess;
         if (pokemon[1][0]['type'].length == 2) {

@@ -81,10 +81,6 @@ footer {
 }
 
 /*
-    Current team screen
-*/
-
-/*
     Pokemon select screen
 */
 
@@ -134,9 +130,18 @@ footer {
     }
 }
 
+.selected-pokemon-data-window {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+
 .selected-pokemon-data-info {
     display: flex;
+    flex: 0 0 100%;
     flex-direction: column;
+    transform: translateX(-100%);
     width: 100%;
 
     .selected-pokemon-data-info-entry {
@@ -164,7 +169,7 @@ footer {
         display: flex;
         height: 100%;
         margin: 0;
-        padding: 0 5% 0 5%;
+        padding: 0.75em 5%;
         width: 55%;
     }
 
@@ -180,6 +185,70 @@ footer {
     #selected-pokemon-data-info-content-national,
     #selected-pokemon-data-info-content-generation {
         border-top: 1px solid var(--ui_dark_3);
+    }
+}
+
+.selected-pokemon-data-stats {
+    background-color: var(--ui_dark_1);
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 80%;
+
+    
+}
+
+.selected-pokemon-data-stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 0 5%;
+
+    & small {
+        color: white;
+        margin: 0;
+    }
+
+    .selected-pokemon-data-stat-header {
+        text-align: right;
+        width: 60px;
+    }
+
+    .selected-pokemon-data-stat-value {
+        text-align: center;
+        width: 15%;
+    }
+    
+    .selected-pokemon-data-stat-bar-container {
+        background-color: var(--ui_dark_2);
+        border-radius: 8px;
+        display: flex;
+        flex: 1;
+
+        .selected-pokemon-data-stat-bar {
+            background-color: aqua;
+            border-radius: 8px;
+            width: 50%;
+        }
+    }
+}
+
+.selected-pokemon-data-stats-focus {
+    transform: translateX(-100%);
+}
+
+.selected-pokemon-window-swap-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    & h5 {
+        padding: 0.5em;
+        margin: 0;
+        text-align: center;
+        width: 50%;
     }
 }
 
