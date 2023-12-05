@@ -115,6 +115,10 @@
 }
 
 @keyframes splash-animation-menu-screen {
+    0% {
+        opacity: 0;
+    }
+
     67% {
         background-color: var(--ui_primary_light);
         border-radius: 50%;
@@ -122,6 +126,7 @@
         height: 60vw;
         max-height: 200px;
         max-width: 200px;
+        opacity: 1;
         width: 60vw;
     }
 

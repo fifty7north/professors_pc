@@ -8,8 +8,8 @@ nav {
 
 .page-bg {
     background-color: var(--ui_primary_light);
-    background-image:  linear-gradient(135deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(225deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(45deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(315deg, var(--ui_light_1) 25%, var(--ui_primary_light) 25%);
-    background-position:  75px 0, 75px 0, 0 0, 0 0;
+    background-image: linear-gradient(135deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(225deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(45deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(315deg, var(--ui_light_1) 25%, var(--ui_primary_light) 25%);
+    background-position: 75px 0, 75px 0, 0 0, 0 0;
     background-size: 150px 150px;
     background-repeat: repeat;
     height: 100%;
@@ -40,7 +40,7 @@ nav {
 }
 
 #page-bg-accent-light {
-    animation: page-bg-accent-light-fly-in-mobile 0.5s cubic-bezier(.4,.8,.6,1) forwards;
+    animation: page-bg-accent-light-fly-in-mobile 0.5s cubic-bezier(.4, .8, .6, 1) forwards;
     background-color: var(--ui_accent_red_light);
     right: 0;
 
@@ -54,7 +54,7 @@ nav {
 
 @media screen and (min-width: 769px) {
     #page-bg-accent-light {
-        animation: page-bg-accent-light-fly-in-desktop 0.5s cubic-bezier(.4,.8,.6,1) forwards;
+        animation: page-bg-accent-light-fly-in-desktop 0.5s cubic-bezier(.4, .8, .6, 1) forwards;
 
         & img {
             padding: 25% 5% 5% 20%;
@@ -63,14 +63,14 @@ nav {
 }
 
 #page-bg-accent-dark {
-    animation: page-bg-accent-dark-fly-in-mobile 0.5s cubic-bezier(.4,.8,.6,1) forwards;
+    animation: page-bg-accent-dark-fly-in-mobile 0.5s cubic-bezier(.4, .8, .6, 1) forwards;
     bottom: 5%;
     background-color: var(--ui_accent_red_dark);
 }
 
 @media screen and (min-width: 769px) {
     #page-bg-accent-dark {
-        animation: page-bg-accent-dark-fly-in-desktop 0.5s cubic-bezier(.4,.8,.6,1) forwards;
+        animation: page-bg-accent-dark-fly-in-desktop 0.5s cubic-bezier(.4, .8, .6, 1) forwards;
         bottom: 0;
         right: 10%;
     }
@@ -97,12 +97,126 @@ footer {
     position: absolute;
     width: 100%;
     z-index: 0;
+}
 
-    .pokemon-info {
-        height: calc(100vh - 84px);
-        left: 0;
-        position: fixed;
-        width: 50%;
+.selected-pokemon {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 84px);
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    width: 50%;
+
+    & img {
+        height: 256px;
+        width: 256px;
+    }
+}
+
+.selected-pokemon-data {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+    width: 80%;
+
+    .selected-pokemon-data-name {
+        background-color: var(--ui_dark_1);
+        color: white;
+        margin: 0;
+        padding: 0.5em 0;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.selected-pokemon-data-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .selected-pokemon-data-info-entry {
+        align-items: center;
+        background-color: var(--ui_dark_1);
+        color: white;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        width: 100%;
+    }
+
+    .selected-pokemon-data-info-header {
+        background-color: var(--ui_dark_1);
+        padding: 0 5%;
+        text-align: center;
+        width: 35%;
+    }
+
+    .selected-pokemon-data-info-content {
+        align-items: center;
+        background-color: var(--ui_dark_2);
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+        padding: 0 5% 0 5%;
+        width: 55%;
+    }
+
+    #selected-pokemon-data-info-type-1,
+    #selected-pokemon-data-info-type-2 {
+        height: 2em;
+    }
+
+    #selected-pokemon-data-info-content-regional,
+    #selected-pokemon-data-info-content-national,
+    #selected-pokemon-data-info-content-generation {
+        border-top: 1px solid var(--ui_dark_3);
+    }
+}
+
+.selected-pokemon-add-button {
+    background-color: var(--ui_accent_green_dark);
+    border-radius: 0 36px 36px 0;
+    display: flex;
+    height: 72px;
+    list-style: none;
+    position: relative;
+    transform: translateX(-18.5%);
+    width: 120%;
+
+    .pokemon-entry-info {
+        align-items: center;
+        display: flex;
+        gap: 4%;
+        height: 60px;
+        justify-content: right;
+        margin: 6px;
+        width: 75%;
+
+        & img {
+            border-radius: 100%;
+            height: 60px;
+            transition: all 0.25s;
+            width: 60px;
+        }
+
+        & p {
+            color: white;
+            margin: 0;
+            transition: all 0.25s;
+            user-select: none;
+        }
+    }
+
+    .selected-pokemon-add-button-accent {
+        background-color: var(--ui_accent_green_light);
+        clip-path: polygon(0 0, 92% 0%, 100% 100%, 0% 100%);
+        height: 100%;
+        transition: all 0.25s;
+        width: 25%;
     }
 }
 
@@ -164,6 +278,7 @@ footer {
     transition: all 0.75s;
 
 }
+
 .pokemon-entry-hover {
     cursor: pointer;
     transform: translateX(0%);
@@ -171,13 +286,6 @@ footer {
 
 
     .pokemon-entry-info {
-
-        & img {
-            border-radius: 100%;
-            height: 66px;
-            margin-left: -3px;
-            width: 66px;
-        }
 
         & p {
             font-weight: 700;
