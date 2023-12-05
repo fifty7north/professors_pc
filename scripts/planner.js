@@ -216,17 +216,15 @@ gamePokemonData.forEach(pokemon => {
     document.querySelector('.pokemon-list').appendChild(newPokemonEntry);
 });
 
-//Pokemon entry hover effect
+//Pokemon entry hover effect colour change
 
 document.querySelectorAll('.pokemon-entry').forEach(pokemonEntry => {
     let pokemonEntryType = pokemonEntry.querySelector('.pokemon-entry-type');
     pokemonEntry.addEventListener('mouseenter', () => {
-        pokemonEntry.classList.add('pokemon-entry-hover');
         pokemonEntry.querySelector('img').classList.add('pokemon-entry-type-' + pokemonEntryType.dataset.type);
         pokemonEntryType.classList.add('pokemon-entry-type-' + pokemonEntryType.dataset.type)
     })
     pokemonEntry.addEventListener('mouseleave', () => {
-        pokemonEntry.classList.remove('pokemon-entry-hover');
         pokemonEntry.querySelector('img').classList.remove('pokemon-entry-type-' + pokemonEntryType.dataset.type);
         pokemonEntryType.classList.remove('pokemon-entry-type-' + pokemonEntryType.dataset.type)
     })
@@ -307,8 +305,6 @@ document.querySelectorAll('.pokemon-entry').forEach(entry => {
 
         //Updates pokemon stat values
 
-        console.log(pokemon)
-
         for (let stat = 0; stat < pokemon[1][0]['base_stats'].length; stat++) {
             let statPath = document.getElementById('selected-pokemon-data-stat-' + stat)
             let baseStatValue = pokemon[1][0]['base_stats'][stat];
@@ -317,9 +313,15 @@ document.querySelectorAll('.pokemon-entry').forEach(entry => {
             statPath.querySelector('.selected-pokemon-data-stat-bar').style.width = baseStatPercent+'%';
             statPath.querySelector('.selected-pokemon-data-stat-bar-fill').style.backgroundColor = 'hsl('+baseStatPercent*2+', 75%, 45%)';
         }
-    })
+    });
+});
 
-    //Navigate between pokemon info and stat views
+//
 
-    
+document.getElementById('selected-pokemon-data-window-select-button-right').addEventListener('click', () => {
+    document.querySelector('.selected-pokemon-data-stats-view').scrollIntoView({behavior: 'smooth'})
+})
+
+document.getElementById('selected-pokemon-data-window-select-button-left').addEventListener('click', () => {
+    document.querySelector('.selected-pokemon-data-info-view').scrollIntoView({behavior: 'smooth'})
 })
