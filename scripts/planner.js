@@ -262,42 +262,64 @@ document.querySelectorAll('.pokemon-entry').forEach(entry => {
         let pokemonSelect = entry.id.substring(14);
         let pokemon = gamePokemonData.find(x => x[0] == pokemonSelect);
 
-        //Updates pokemon info image, header and data elements
+        //Updates pokemon info image and header
 
         document.getElementById('selected-pokemon-image').setAttribute('src', './images/pokemon_sprites/' + pokemon[0] + '.png');
         document.getElementById('selected-pokemon-image').setAttribute('alt', pokemon[0]);
         document.getElementById('selected-pokemon-data-name').innerHTML = pokemon[1][0]['name'];
+
+        //Updates pokemon info national pokedex number
+
+        let numberProcess = pokemon[1][0]['national_pokedex_id'];
+        if (numberProcess < 1000) {
+            if (numberProcess > 100) {
+                numberProcess = '0' + numberProcess.toString();
+            } else if (numberProcess > 10) {
+                numberProcess = '00' + numberProcess.toString();
+            } else {
+                numberProcess = '000' + numberProcess.toString();
+            }
+        }
+        document.getElementById('selected-pokemon-data-info-content-national').innerHTML = 'No. ' + numberProcess;
+
+        //Updates pokemon info type
+
         let typeProcess;
         if (pokemon[1][0]['type'].length == 2) {
-            let type1 = pokemon[1][0]['type'][0].charAt(0).toUpperCase()+pokemon[1][0]['type'][0].slice(1);
-            let type2 = pokemon[1][0]['type'][1].charAt(0).toUpperCase()+pokemon[1][0]['type'][1].slice(1);
-            typeProcess = type1+', '+type2;
+            let type1 = pokemon[1][0]['type'][0].charAt(0).toUpperCase() + pokemon[1][0]['type'][0].slice(1);
+            let type2 = pokemon[1][0]['type'][1].charAt(0).toUpperCase() + pokemon[1][0]['type'][1].slice(1);
+            typeProcess = type1 + ', ' + type2;
         } else {
-            typeProcess = pokemon[1][0]['type'][0].charAt(0).toUpperCase()+pokemon[1][0]['type'][0].slice(1);
+            typeProcess = pokemon[1][0]['type'][0].charAt(0).toUpperCase() + pokemon[1][0]['type'][0].slice(1);
         }
         document.getElementById('selected-pokemon-data-info-content-type').innerHTML = typeProcess;
-        let regionalNumberProcess = pokemon[1][0]['regional_pokedex_id'][gameNumber];
-        if (regionalNumberProcess < 1000) {
-            if (regionalNumberProcess > 100) {
-                regionalNumberProcess = '0' + regionalNumberProcess.toString();
-            } else if (regionalNumberProcess > 10) {
-                regionalNumberProcess = '00' + regionalNumberProcess.toString();
-            } else {
-                regionalNumberProcess = '000' + regionalNumberProcess.toString();
-            }
-        }
-        document.getElementById('selected-pokemon-data-info-content-regional').innerHTML = 'No. ' + regionalNumberProcess;
-        let nationalNumberProcess = pokemon[1][0]['national_pokedex_id'];
-        if (nationalNumberProcess < 1000) {
-            if (nationalNumberProcess > 100) {
-                nationalNumberProcess = '0' + nationalNumberProcess.toString();
-            } else if (nationalNumberProcess > 10) {
-                nationalNumberProcess = '00' + nationalNumberProcess.toString();
-            } else {
-                nationalNumberProcess = '000' + nationalNumberProcess.toString();
-            }
-        }
-        document.getElementById('selected-pokemon-data-info-content-national').innerHTML = 'No. ' + nationalNumberProcess;
+
+        //Updates pokemon info base stats
+
+        let statTotal = pokemon[1][0]['base_stats'].reduce((a, b) => {
+            return a + b;
+        }, 0);
+        document.getElementById('selected-pokemon-data-info-content-stat').innerHTML = statTotal;
+
+        //Updates pokemon info debut generation
+
         document.getElementById('selected-pokemon-data-info-content-generation').innerHTML = pokemon[1][0]['debut_generation'];
+
+        //Updates pokemon stat values
+
+        console.log(pokemon)
+
+        for (let stat = 0; stat < pokemon[1][0]['base_stats'].length; stat++) {
+            let statPath = document.getElementById('selected-pokemon-data-stat-' + stat)
+            let baseStatValue = pokemon[1][0]['base_stats'][stat];
+            statPath.querySelector('.selected-pokemon-data-stat-value').innerHTML = baseStatValue;
+            let baseStatPercent = ((baseStatValue/256)*100).toFixed(0);
+            statPath.querySelector('.selected-pokemon-data-stat-bar').style.width = baseStatPercent+'%';
+            statPath.querySelector('.selected-pokemon-data-stat-bar-fill').style.backgroundColor = 'hsl('+baseStatPercent*2+', 75%, 45%)';
+        }
     })
+
+    //Navigate between pokemon info and stat views
+
+    
 })
