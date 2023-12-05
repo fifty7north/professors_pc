@@ -43,11 +43,22 @@ nav {
     animation: page-bg-accent-light-fly-in-mobile 0.5s cubic-bezier(.4,.8,.6,1) forwards;
     background-color: var(--ui_accent_red_light);
     right: 0;
+
+    & img {
+        height: 70%;
+        padding: 30% 5% 20% 15%;
+        transform: rotate(-30deg);
+        width: 70%;
+    }
 }
 
 @media screen and (min-width: 769px) {
     #page-bg-accent-light {
         animation: page-bg-accent-light-fly-in-desktop 0.5s cubic-bezier(.4,.8,.6,1) forwards;
+
+        & img {
+            padding: 25% 5% 5% 20%;
+        }
     }
 }
 
@@ -102,6 +113,7 @@ footer {
     height: auto;
     margin: 48px 0;
     padding: 0;
+    overflow-x: hidden;
     width: 50%;
 }
 
@@ -112,6 +124,7 @@ footer {
     height: 72px;
     list-style: none;
     position: relative;
+    transform: translateX(100%);
     width: 100%;
 
     .pokemon-entry-info {
@@ -124,23 +137,132 @@ footer {
         width: 75%;
 
         & img {
-            background-color: var(--ui_primary_light);
             border-radius: 100%;
-            height: 100%;
+            height: 60px;
+            transition: all 0.25s;
+            width: 60px;
         }
 
         & p {
             color: white;
             margin: 0;
+            transition: all 0.25s;
+            user-select: none;
         }
     }
 
     .pokemon-entry-type {
-        background-color: var(--ui_dark_1);
         clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%);
         height: 100%;
+        transition: all 0.25s;
         width: 25%;
     }
+}
+
+.pokemon-entry-show {
+    transform: translateX(10%);
+    transition: all 0.75s;
+
+}
+.pokemon-entry-hover {
+    cursor: pointer;
+    transform: translateX(0%);
+    transition: all 0.25s;
+
+
+    .pokemon-entry-info {
+
+        & img {
+            border-radius: 100%;
+            height: 66px;
+            margin-left: -3px;
+            width: 66px;
+        }
+
+        & p {
+            font-weight: 700;
+        }
+    }
+}
+
+.pokemon-entry-image-bg-default {
+    background-color: var(--ui_primary_light);
+}
+
+.pokemon-entry-type-default {
+    background-color: var(--ui_dark_1);
+}
+
+.pokemon-entry-type-normal {
+    background-color: var(--normal);
+}
+
+.pokemon-entry-type-fire {
+    background-color: var(--fire);
+}
+
+.pokemon-entry-type-water {
+    background-color: var(--water);
+}
+
+.pokemon-entry-type-electric {
+    background-color: var(--electric);
+}
+
+.pokemon-entry-type-grass {
+    background-color: var(--grass);
+}
+
+.pokemon-entry-type-ice {
+    background-color: var(--ice);
+}
+
+.pokemon-entry-type-fighting {
+    background-color: var(--fighting);
+}
+
+.pokemon-entry-type-poison {
+    background-color: var(--poison);
+}
+
+.pokemon-entry-type-ground {
+    background-color: var(--ground);
+}
+
+.pokemon-entry-type-flying {
+    background-color: var(--flying);
+}
+
+.pokemon-entry-type-psychic {
+    background-color: var(--psychic);
+}
+
+.pokemon-entry-type-bug {
+    background-color: var(--bug);
+}
+
+.pokemon-entry-type-rock {
+    background-color: var(--rock);
+}
+
+.pokemon-entry-type-ghost {
+    background-color: var(--ghost);
+}
+
+.pokemon-entry-type-dragon {
+    background-color: var(--dragon);
+}
+
+.pokemon-entry-type-dark {
+    background-color: var(--dark);
+}
+
+.pokemon-entry-type-steel {
+    background-color: var(--steel);
+}
+
+.pokemon-entry-type-fairy {
+    background-color: var(--fairy);
 }
 
 /*

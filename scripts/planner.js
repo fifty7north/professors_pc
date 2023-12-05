@@ -39,6 +39,10 @@ Object.entries(pokemonData).forEach(pokemon => {
     }
 });
 
+//Orders gamePokemonData by region pokedex id
+
+gamePokemonData.sort((a, b) => {return a[1][0]['regional_pokedex_id'][gameNumber] - b[1][0]['regional_pokedex_id'][gameNumber]});
+
 //For each pokemon in the chosen game, create an array containing all the pokemon's type weakness/resistance data
 //Array is ordered according to official type order, listed @https://pokemondb.net/type (normal, fire, water, electric, etc.)
 //0 = pokemon has no weakness/resist to type, 1 = pokemon is weak to type, -1 = pokemon resists or is immune to type
@@ -67,9 +71,9 @@ gamePokemonData.forEach(pokemon => {
         //If the pokemon has an ability that modifies it's weaknesses, modifies specific type value based on ability
 
         if (pokemon[1][variant]['ability'] !== 'default') {
-            if (pokemon[1][variant]['ability'] == 'heatproof') {
+            if (pokemon[1][variant]['ability'] == 'Heatproof') {
                 pokemonWeaknessArray[1] = pokemonWeaknessArray[1] * 0.5;
-            } else if (pokemon[1][variant]['ability'] == 'levitate') {
+            } else if (pokemon[1][variant]['ability'] == 'Levitate') {
                 pokemonWeaknessArray[8] = 0;
             }
         }
@@ -151,8 +155,93 @@ gamePokemonData.forEach(pokemon => {
 
 /**
  * 
- * Build page content
+ * Build page content and page content animations
  * 
  */
 
-console.log(gamePokemonData)
+gamePokemonData.forEach(pokemon => {
+
+    //Creates new pokemon entry element
+
+    let newPokemonEntry = document.createElement('li');
+    newPokemonEntry.classList.add('pokemon-entry');
+    newPokemonEntry.setAttribute('id', 'pokemon-entry-'+pokemon[0])
+
+    //Adds new pokemon entry info element to pokemon entry
+
+    let newPokemonEntryInfo = document.createElement('div');
+    newPokemonEntryInfo.classList.add('pokemon-entry-info');
+    newPokemonEntry.appendChild(newPokemonEntryInfo);
+
+    //Adds new pokemon image to pokemon entry info
+
+    let newPokemonEntryImage = document.createElement('img');
+    newPokemonEntryImage.classList.add('pokemon-entry-image-bg-default');
+    newPokemonEntryImage.setAttribute('src', './images/pokemon_sprites/'+pokemon[0]+'.png');
+    newPokemonEntryImage.setAttribute('alt', pokemon[0]);
+    newPokemonEntryInfo.appendChild(newPokemonEntryImage);
+
+    //Adds pokemon regional pokedex number to pokemon entry info
+
+    let numberProcess = pokemon[1][0]['regional_pokedex_id'][gameNumber];
+    if (numberProcess < 1000) {
+        if (numberProcess > 100) {
+            numberProcess = '0'+numberProcess.toString();
+        } else if (numberProcess > 10) {
+            numberProcess = '00'+numberProcess.toString();
+        } else {
+            numberProcess = '000'+numberProcess.toString();
+        }
+    }
+    let newPokemonEntryNumber = document.createElement('p');
+    newPokemonEntryNumber.innerHTML = 'No. '+numberProcess;
+    newPokemonEntryInfo.appendChild(newPokemonEntryNumber);
+
+    //Adds pokemon name to pokemon entry info
+
+    let newPokemonEntryName = document.createElement('p');
+    newPokemonEntryName.innerHTML = pokemon[1][0]['name'];
+    newPokemonEntryInfo.appendChild(newPokemonEntryName);
+
+    //Adds pokemon type element to pokemon entry
+
+    let newPokemonEntryType = document.createElement('div');
+    newPokemonEntryType.classList.add('pokemon-entry-type');
+    newPokemonEntryType.classList.add('pokemon-entry-type-default');
+    newPokemonEntryType.setAttribute('data-type', pokemon[1][0]['type'][0])
+    newPokemonEntry.appendChild(newPokemonEntryType);
+
+    //Appends pokemon entry to pokemon list section on page
+
+    document.querySelector('.pokemon-list').appendChild(newPokemonEntry);
+});
+
+//Pokemon entry hover effect
+
+document.querySelectorAll('.pokemon-entry').forEach(pokemonEntry => {
+    let pokemonEntryType = pokemonEntry.querySelector('.pokemon-entry-type');
+    pokemonEntry.addEventListener('mouseenter', () => {
+        pokemonEntry.classList.add('pokemon-entry-hover');
+        pokemonEntry.querySelector('img').classList.add('pokemon-entry-type-'+pokemonEntryType.dataset.type);
+        pokemonEntryType.classList.add('pokemon-entry-type-'+pokemonEntryType.dataset.type)
+    })
+    pokemonEntry.addEventListener('mouseleave', () => {
+        pokemonEntry.classList.remove('pokemon-entry-hover');
+        pokemonEntry.querySelector('img').classList.remove('pokemon-entry-type-'+pokemonEntryType.dataset.type);
+        pokemonEntryType.classList.remove('pokemon-entry-type-'+pokemonEntryType.dataset.type)
+    })
+})
+
+//Pokemon entry fly in animation function
+
+pokemonEntryAnimateIn();
+
+function pokemonEntryAnimateIn() {
+    let animationDelay = 0;
+    document.querySelectorAll('.pokemon-entry').forEach(pokemonEntry => {
+        setTimeout(() => {
+            pokemonEntry.classList.add('pokemon-entry-show');
+        }, animationDelay)
+        animationDelay = animationDelay + 25;
+    })
+}
