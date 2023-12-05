@@ -109,6 +109,7 @@ footer {
 
     #selected-pokemon-image {
         height: 256px;
+        margin-bottom: 1em;
         width: 256px;
     }
 }
