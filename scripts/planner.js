@@ -41,7 +41,7 @@ Object.entries(pokemonData).forEach(pokemon => {
 
 //Orders gamePokemonData by region pokedex id
 
-gamePokemonData.sort((a, b) => {return a[1][0]['regional_pokedex_id'][gameNumber] - b[1][0]['regional_pokedex_id'][gameNumber]});
+gamePokemonData.sort((a, b) => { return a[1][0]['regional_pokedex_id'][gameNumber] - b[1][0]['regional_pokedex_id'][gameNumber] });
 
 //For each pokemon in the chosen game, create an array containing all the pokemon's type weakness/resistance data
 //Array is ordered according to official type order, listed @https://pokemondb.net/type (normal, fire, water, electric, etc.)
@@ -165,7 +165,7 @@ gamePokemonData.forEach(pokemon => {
 
     let newPokemonEntry = document.createElement('li');
     newPokemonEntry.classList.add('pokemon-entry');
-    newPokemonEntry.setAttribute('id', 'pokemon-entry-'+pokemon[0])
+    newPokemonEntry.setAttribute('id', 'pokemon-entry-' + pokemon[0])
 
     //Adds new pokemon entry info element to pokemon entry
 
@@ -177,7 +177,7 @@ gamePokemonData.forEach(pokemon => {
 
     let newPokemonEntryImage = document.createElement('img');
     newPokemonEntryImage.classList.add('pokemon-entry-image-bg-default');
-    newPokemonEntryImage.setAttribute('src', './images/pokemon_sprites/'+pokemon[0]+'.png');
+    newPokemonEntryImage.setAttribute('src', './images/pokemon_sprites/' + pokemon[0] + '.png');
     newPokemonEntryImage.setAttribute('alt', pokemon[0]);
     newPokemonEntryInfo.appendChild(newPokemonEntryImage);
 
@@ -186,15 +186,15 @@ gamePokemonData.forEach(pokemon => {
     let numberProcess = pokemon[1][0]['regional_pokedex_id'][gameNumber];
     if (numberProcess < 1000) {
         if (numberProcess > 100) {
-            numberProcess = '0'+numberProcess.toString();
+            numberProcess = '0' + numberProcess.toString();
         } else if (numberProcess > 10) {
-            numberProcess = '00'+numberProcess.toString();
+            numberProcess = '00' + numberProcess.toString();
         } else {
-            numberProcess = '000'+numberProcess.toString();
+            numberProcess = '000' + numberProcess.toString();
         }
     }
     let newPokemonEntryNumber = document.createElement('p');
-    newPokemonEntryNumber.innerHTML = 'No. '+numberProcess;
+    newPokemonEntryNumber.innerHTML = 'No. ' + numberProcess;
     newPokemonEntryInfo.appendChild(newPokemonEntryNumber);
 
     //Adds pokemon name to pokemon entry info
@@ -222,13 +222,13 @@ document.querySelectorAll('.pokemon-entry').forEach(pokemonEntry => {
     let pokemonEntryType = pokemonEntry.querySelector('.pokemon-entry-type');
     pokemonEntry.addEventListener('mouseenter', () => {
         pokemonEntry.classList.add('pokemon-entry-hover');
-        pokemonEntry.querySelector('img').classList.add('pokemon-entry-type-'+pokemonEntryType.dataset.type);
-        pokemonEntryType.classList.add('pokemon-entry-type-'+pokemonEntryType.dataset.type)
+        pokemonEntry.querySelector('img').classList.add('pokemon-entry-type-' + pokemonEntryType.dataset.type);
+        pokemonEntryType.classList.add('pokemon-entry-type-' + pokemonEntryType.dataset.type)
     })
     pokemonEntry.addEventListener('mouseleave', () => {
         pokemonEntry.classList.remove('pokemon-entry-hover');
-        pokemonEntry.querySelector('img').classList.remove('pokemon-entry-type-'+pokemonEntryType.dataset.type);
-        pokemonEntryType.classList.remove('pokemon-entry-type-'+pokemonEntryType.dataset.type)
+        pokemonEntry.querySelector('img').classList.remove('pokemon-entry-type-' + pokemonEntryType.dataset.type);
+        pokemonEntryType.classList.remove('pokemon-entry-type-' + pokemonEntryType.dataset.type)
     })
 })
 
@@ -245,3 +245,58 @@ function pokemonEntryAnimateIn() {
         animationDelay = animationDelay + 25;
     })
 }
+
+/**
+ * 
+ * Update pokemon info section upon clicking a pokemon entry
+ * 
+ */
+
+//
+
+document.querySelectorAll('.pokemon-entry').forEach(entry => {
+    entry.addEventListener('click', () => {
+
+        //
+
+        let pokemonSelect = entry.id.substring(14);
+        let pokemon = gamePokemonData.find(x => x[0] == pokemonSelect);
+
+        //
+
+        document.getElementById('selected-pokemon-image').setAttribute('src', './images/pokemon_sprites/' + pokemon[0] + '.png');
+        document.getElementById('selected-pokemon-data-name').innerHTML = pokemon[1][0]['name'];
+        let typeProcess;
+        if (pokemon[1][0]['type'].length == 2) {
+            let type1 = pokemon[1][0]['type'][0].charAt(0).toUpperCase()+pokemon[1][0]['type'][0].slice(1);
+            let type2 = pokemon[1][0]['type'][1].charAt(0).toUpperCase()+pokemon[1][0]['type'][1].slice(1);
+            typeProcess = type1+', '+type2;
+        } else {
+            typeProcess = pokemon[1][0]['type'][0].charAt(0).toUpperCase()+pokemon[1][0]['type'][0].slice(1);
+        }
+        document.getElementById('selected-pokemon-data-info-content-type').innerHTML = typeProcess;
+        let regionalNumberProcess = pokemon[1][0]['regional_pokedex_id'][gameNumber];
+        if (regionalNumberProcess < 1000) {
+            if (regionalNumberProcess > 100) {
+                regionalNumberProcess = '0' + regionalNumberProcess.toString();
+            } else if (regionalNumberProcess > 10) {
+                regionalNumberProcess = '00' + regionalNumberProcess.toString();
+            } else {
+                regionalNumberProcess = '000' + regionalNumberProcess.toString();
+            }
+        }
+        document.getElementById('selected-pokemon-data-info-content-regional').innerHTML = 'No. ' + regionalNumberProcess;
+        let nationalNumberProcess = pokemon[1][0]['national_pokedex_id'];
+        if (nationalNumberProcess < 1000) {
+            if (nationalNumberProcess > 100) {
+                nationalNumberProcess = '0' + nationalNumberProcess.toString();
+            } else if (nationalNumberProcess > 10) {
+                nationalNumberProcess = '00' + nationalNumberProcess.toString();
+            } else {
+                nationalNumberProcess = '000' + nationalNumberProcess.toString();
+            }
+        }
+        document.getElementById('selected-pokemon-data-info-content-national').innerHTML = 'No. ' + nationalNumberProcess;
+        document.getElementById('selected-pokemon-data-info-content-generation').innerHTML = pokemon[1][0]['debut_generation'];
+    })
+})
