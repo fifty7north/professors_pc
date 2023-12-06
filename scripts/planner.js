@@ -216,7 +216,7 @@ gamePokemonData.forEach(pokemon => {
 
     //Appends pokemon entry to pokemon list section on page
 
-    document.querySelector('.pokemon-list').appendChild(newPokemonEntry);
+    document.getElementById('pokemon-list').appendChild(newPokemonEntry);
 });
 
 //Pokemon entry hover effect colour change
@@ -249,7 +249,7 @@ function pokemonEntryAnimateIn() {
 
 /**
  * 
- * Update pokemon info section upon clicking a pokemon entry
+ * Scrolls to and updates pokemon info section upon clicking a pokemon entry
  * 
  */
 
@@ -257,6 +257,10 @@ function pokemonEntryAnimateIn() {
 
 document.querySelectorAll('.pokemon-entry').forEach(entry => {
     entry.addEventListener('click', () => {
+
+        //Ccrolls to selected pokemon view upon choosing a pokemon, only does something on mobile layout
+
+        document.getElementById('selected-pokemon').scrollIntoView({ behavior: 'smooth' });
 
         //
 
@@ -319,12 +323,35 @@ document.querySelectorAll('.pokemon-entry').forEach(entry => {
     });
 });
 
-//
+//Selected pokemon info/stats window swap
 
 document.getElementById('selected-pokemon-data-window-select-button-right').addEventListener('click', () => {
-    document.querySelector('.selected-pokemon-data-stats-view').scrollIntoView({ behavior: 'smooth' })
-})
+    document.querySelector('.selected-pokemon-data-stats-view').scrollIntoView({ behavior: 'smooth' });
+});
 
 document.getElementById('selected-pokemon-data-window-select-button-left').addEventListener('click', () => {
-    document.querySelector('.selected-pokemon-data-info-view').scrollIntoView({ behavior: 'smooth' })
+    document.querySelector('.selected-pokemon-data-info-view').scrollIntoView({ behavior: 'smooth' });
+});
+
+//Pokemon info mobile controls
+
+document.getElementById('pokemon-list').scrollIntoView({ behavior: 'instant' });
+
+document.getElementById('mobile-pokemon-info-button').addEventListener('click', () => {
+    document.getElementById('selected-pokemon').scrollIntoView({ behavior: 'smooth' });
+
+});
+
+document.getElementById('mobile-pokemon-search-button').addEventListener('click', () => {
+    document.getElementById('pokemon-list').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('pokemon-section').addEventListener('scroll', () => {
+    if (document.getElementById('pokemon-section').scrollLeft > (window.innerWidth / 2)) {
+        document.getElementById('mobile-pokemon-info-button').style.opacity = 0.25;
+        document.getElementById('mobile-pokemon-search-button').style.opacity = 1;
+    } else {
+        document.getElementById('mobile-pokemon-info-button').style.opacity = 1;
+        document.getElementById('mobile-pokemon-search-button').style.opacity = 0.25;
+    }
 })

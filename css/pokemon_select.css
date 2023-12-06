@@ -1,0 +1,533 @@
+#pokemon-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: calc(100vh - 96px);
+    overflow-x: scroll;
+    padding: 48px 0 48px 0;
+    position: absolute;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: 0;
+    width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+    #pokemon-section {
+        height: calc(100vh - 84px);
+        padding: 48px 0 36px 0;
+    }
+}
+
+#pokemon-section::-webkit-scrollbar {
+    display: none;
+}
+
+/*
+    Selected pokemon section
+*/
+
+#selected-pokemon {
+    align-items: center;
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    gap: 2px;
+    height: calc(100vh - 96px);
+    justify-content: space-evenly;
+    overflow-y: scroll;
+    position: sticky;
+    scroll-snap-align: center;
+
+    #selected-pokemon-image {
+        height: 192px;
+        width: 192px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #selected-pokemon {
+        flex: 0 0 50%;
+        height: calc(100vh - 84px);
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    #selected-pokemon {
+        #selected-pokemon-image {
+            height: 256px;
+            width: 256px;
+        }
+    }
+}
+
+.selected-pokemon-data {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+    width: 80%;
+}
+
+#selected-pokemon-data-name {
+    background-color: var(--ui_primary_dark);
+    border-radius: 24px 24px 0 0;
+    color: white;
+    font-weight: 700;
+    margin: 0;
+    padding: 0.4em 0;
+    text-align: center;
+    width: 100%;
+}
+
+.selected-pokemon-data-window {
+    border-radius: 0 0 24px 24px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    position: relative;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: 0;
+    width: 100%;
+}
+
+.selected-pokemon-data-window::-webkit-scrollbar {
+    display: none;
+}
+
+.selected-pokemon-data-info-view {
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    scroll-snap-align: center;
+    width: 100%;
+}
+
+.selected-pokemon-data-info-entry {
+    align-items: center;
+    background-color: var(--ui_primary_dark);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    width: 100%;
+}
+
+.selected-pokemon-data-info-header {
+    background-color: var(--ui_primary_dark);
+    border-bottom: 1px solid var(--ui_dark_3);
+    margin: 0;
+    padding: 0.75em 5%;
+    text-align: center;
+    width: 35%;
+}
+
+.selected-pokemon-data-info-content {
+    align-items: center;
+    background-color: var(--ui_dark_1);
+    border-bottom: 1px solid var(--ui_dark_3);
+    border-right: 1px solid var(--ui_dark_3);
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0.75em 5%;
+    width: 55%;
+}
+
+.selected-pokemon-data-window-select-bg {
+    align-items: center;
+    background-color: var(--ui_primary_dark);
+    display: flex;
+    height: 1em;
+    justify-content: center;
+    padding: 1em 0;
+    width: 100%;
+
+    #selected-pokemon-data-window-select-button-left,
+    #selected-pokemon-data-window-select-button-right {
+        border: solid white;
+        border-radius: 0.2em;
+        border-width: 0 0.4em 0.4em 0;
+        display: inline-block;
+        padding: 0.4em;
+    }
+
+    #selected-pokemon-data-window-select-button-left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+
+    #selected-pokemon-data-window-select-button-right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+}
+
+#selected-pokemon-data-window-select-button-left:hover,
+#selected-pokemon-data-window-select-button-right:hover {
+    cursor: pointer;
+
+}
+
+.selected-pokemon-data-stats-view {
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    scroll-snap-align: center;
+    transition: all 0.5s;
+    width: 100%;
+}
+
+.selected-pokemon-data-stats {
+    background-color: var(--ui_primary_dark);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+}
+
+.selected-pokemon-data-stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 0 5%;
+
+    & small {
+        color: white;
+        margin: 0;
+    }
+
+    .selected-pokemon-data-stat-header {
+        text-align: right;
+        width: 48px;
+    }
+
+    .selected-pokemon-data-stat-value {
+        text-align: center;
+        width: 15%;
+    }
+
+    .selected-pokemon-data-stat-bar-container {
+        background-color: var(--ui_dark_1);
+        border-radius: 8px;
+        display: flex;
+        flex: 1;
+
+        .selected-pokemon-data-stat-bar {
+            transition: width 0.5s;
+            width: 30%;
+        }
+
+        .selected-pokemon-data-stat-bar-fill {
+            animation: selected-pokemon-data-stat-bar 0.5s forwards;
+            background-color: hsl(60, 75%, 45%);
+            border-radius: 8px;
+            height: 100%;
+            transition: background-color 0.5s;
+            width: 100%;
+        }
+    }
+}
+
+.selected-pokemon-button {
+    background-color: var(--ui_primary_dark);
+    border-radius: 0 36px 36px 0;
+    display: flex;
+    height: 72px;
+    list-style: none;
+    position: relative;
+    transform: translateX(-20%);
+    transition: transform 0.2s;
+    width: 100%;
+
+    .selected-pokemon-button-content {
+        align-items: center;
+        display: flex;
+        gap: 4%;
+        height: 60px;
+        justify-content: right;
+        margin: 6px;
+        width: 75%;
+
+        & img {
+            border-radius: 100%;
+            height: 60px;
+            opacity: 0.5;
+            transition: all 0.25s;
+            width: 60px;
+        }
+
+        & p {
+            color: white;
+            margin: 0;
+            user-select: none;
+        }
+    }
+
+    .selected-pokemon-button-accent {
+        background-color: var(--ui_dark_1);
+        clip-path: polygon(0 0, 92% 0%, 100% 100%, 0% 100%);
+        height: 100%;
+        width: 25%;
+    }
+}
+
+.selected-pokemon-button:hover {
+    cursor: pointer;
+    transform: translateX(-10%);
+
+    & p {
+        font-weight: 700;
+    }
+
+    & img {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .selected-pokemon-button {
+        background-color: var(--ui_accent_red_light);
+
+        .selected-pokemon-button-accent {
+            background-color: var(--ui_accent_red_dark);
+        }
+    }
+}
+
+/*
+    Pokemon list section
+*/
+
+#pokemon-list {
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    gap: 12px;
+    height: calc(100vh - 144px);
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 24px 0;
+    scroll-snap-align: center;
+    scrollbar-width: 0;
+    width: 100%;
+}
+
+#pokemon-list::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+    #pokemon-list {
+        flex: 0 0 50%;
+        height: calc(100vh - 132px);
+    }
+}
+
+.pokemon-entry {
+    background-color: black;
+    border-radius: 36px 0 0 36px;
+    display: flex;
+    height: 72px;
+    list-style: none;
+    position: relative;
+    transform: translateX(100%);
+    width: 100%;
+
+    .pokemon-entry-info {
+        align-items: center;
+        display: flex;
+        gap: 4%;
+        height: 60px;
+        justify-content: left;
+        margin: 6px;
+        width: 75%;
+
+        & img {
+            border-radius: 100%;
+            height: 60px;
+            transition: all 0.25s;
+            width: 60px;
+        }
+
+        & p {
+            color: white;
+            margin: 0;
+            user-select: none;
+        }
+    }
+
+    .pokemon-entry-type {
+        clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%);
+        height: 100%;
+        transition: all 0.25s;
+        width: 25%;
+    }
+}
+
+.pokemon-entry:hover {
+    cursor: pointer;
+    transform: translateX(10%);
+    transition: transform 0.25s;
+
+    & p {
+        font-weight: 700;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .pokemon-entry:hover {
+        transform: translateX(0%);
+    }
+}
+
+.pokemon-entry-show {
+    transform: translateX(20%);
+    transition: transform 0.75s;
+}
+
+@media screen and (min-width: 769px) {
+    .pokemon-entry-show {
+        transform: translateX(10%);
+    }
+}
+
+.pokemon-entry-image-bg-default {
+    background-color: var(--ui_primary_light);
+}
+
+.pokemon-entry-type-default {
+    background-color: var(--ui_dark_1);
+}
+
+.pokemon-entry-type-normal {
+    background-color: var(--normal);
+}
+
+.pokemon-entry-type-fire {
+    background-color: var(--fire);
+}
+
+.pokemon-entry-type-water {
+    background-color: var(--water);
+}
+
+.pokemon-entry-type-electric {
+    background-color: var(--electric);
+}
+
+.pokemon-entry-type-grass {
+    background-color: var(--grass);
+}
+
+.pokemon-entry-type-ice {
+    background-color: var(--ice);
+}
+
+.pokemon-entry-type-fighting {
+    background-color: var(--fighting);
+}
+
+.pokemon-entry-type-poison {
+    background-color: var(--poison);
+}
+
+.pokemon-entry-type-ground {
+    background-color: var(--ground);
+}
+
+.pokemon-entry-type-flying {
+    background-color: var(--flying);
+}
+
+.pokemon-entry-type-psychic {
+    background-color: var(--psychic);
+}
+
+.pokemon-entry-type-bug {
+    background-color: var(--bug);
+}
+
+.pokemon-entry-type-rock {
+    background-color: var(--rock);
+}
+
+.pokemon-entry-type-ghost {
+    background-color: var(--ghost);
+}
+
+.pokemon-entry-type-dragon {
+    background-color: var(--dragon);
+}
+
+.pokemon-entry-type-dark {
+    background-color: var(--dark);
+}
+
+.pokemon-entry-type-steel {
+    background-color: var(--steel);
+}
+
+.pokemon-entry-type-fairy {
+    background-color: var(--fairy);
+}
+
+/*
+    Animation keyframes
+*/
+
+@keyframes selected-pokemon-data-stat-bar {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes page-bg-accent-light-fly-in-mobile {
+    0% {
+        bottom: -70%;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes page-bg-accent-dark-fly-in-mobile {
+    0% {
+        bottom: -65%;
+    }
+
+    100% {
+        bottom: 5%;
+    }
+}
+
+@keyframes page-bg-accent-light-fly-in-desktop {
+    0% {
+        right: -70%;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes page-bg-accent-dark-fly-in-desktop {
+    0% {
+        right: -60%;
+    }
+
+    100% {
+        right: 10%;
+    }
+}
