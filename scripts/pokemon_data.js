@@ -1,6 +1,19 @@
 export default {
 
     /*
+    //Checklist
+
+    ✓   Generation 1 pokemon, data for gens 1-5
+    -   Generation 2 pokemon, data for gens 1-5
+    -   Generation 3 pokemon, data for gens 1-5
+    -   Generation 4 pokemon, data for gens 1-5
+    -   Generation 5 pokemon, data for gens 1-5
+    -   Generation 1-5 pokemon, data for gens 6-9 (including type changes)
+    -   Generation 6 pokemon, data for all gens (including all mega evolutions)
+    -   Generation 7 pokemon, data for all gens (including all alolan forms)
+    -   Generation 8 pokemon, data for all gens (including all g-max pokemon, galarian forms and dlc)
+    -   Generation 9 pokemon, data for all gens (including dlc)
+
     //How to fill in data
 
     'pokemon name': [

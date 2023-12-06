@@ -31,11 +31,10 @@
     display: flex;
     flex: 0 0 100%;
     flex-direction: column;
-    gap: 2px;
+    gap: 12px;
     height: calc(100vh - 96px);
     justify-content: space-evenly;
     overflow-y: scroll;
-    position: sticky;
     scroll-snap-align: center;
     scrollbar-width: 0;
 
@@ -111,6 +110,7 @@
 .selected-pokemon-data-info-entry {
     align-items: center;
     background-color: var(--ui_primary_dark);
+    border-bottom: 1px solid var(--ui_dark_3);
     color: white;
     display: flex;
     flex-direction: row;
@@ -120,24 +120,66 @@
 
 .selected-pokemon-data-info-header {
     background-color: var(--ui_primary_dark);
-    border-bottom: 1px solid var(--ui_dark_3);
     margin: 0;
-    padding: 0.75em 5%;
+    padding: 1em 5%;
     text-align: center;
     width: 35%;
+}
+
+#selected-pokemon-data-info-header-type {
+    height: fit-content;
 }
 
 .selected-pokemon-data-info-content {
     align-items: center;
     background-color: var(--ui_dark_1);
-    border-bottom: 1px solid var(--ui_dark_3);
     border-right: 1px solid var(--ui_dark_3);
     box-sizing: border-box;
     display: flex;
     height: 100%;
     margin: 0;
-    padding: 0.75em 5%;
+    padding: 1em 5%;
     width: 55%;
+}
+
+#selected-pokemon-data-info-content-type {
+    flex-wrap: wrap;
+    padding: 0.5em 5%;
+    gap: 1em;
+}
+
+#selected-pokemon-data-info-content-type-1,
+#selected-pokemon-data-info-content-type-2 {
+    align-items: center;
+    background-color: var(--ui_primary_dark);
+    border-radius: 1.25em;
+    display: flex;
+    height: 2em;
+    width: 8em;
+
+    & div {
+        align-items: center;
+        background-color: var(--ui_dark_2);
+        border-radius: 1.25em 0 0 1.25em;
+        clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+        display: flex;
+        height: 100%;
+        width: fit-content;
+
+        & img {
+            height: 1.5em;
+            opacity: 0;
+            padding: 0.25em;
+            width: 1.5em;
+        }
+    }
+
+    & p {
+        flex: 1;
+        margin: 0;
+        padding: 0.5em;
+        text-align: center;
+    }
 }
 
 .selected-pokemon-data-window-select-bg {
