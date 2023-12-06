@@ -163,6 +163,7 @@ gamePokemonData.forEach(pokemon => {
  */
 
 gamePokemonData.forEach(pokemon => {
+    console.log(pokemon);
 
     //Creates new pokemon entry element
 
@@ -253,16 +254,14 @@ function pokemonEntryAnimateIn() {
  * 
  */
 
-//
-
 document.querySelectorAll('.pokemon-entry').forEach(entry => {
     entry.addEventListener('click', () => {
 
-        //Ccrolls to selected pokemon view upon choosing a pokemon, only does something on mobile layout
+        //Scrolls to selected pokemon view upon choosing a pokemon, only does something on mobile layout
 
         document.getElementById('selected-pokemon').scrollIntoView({ behavior: 'smooth' });
 
-        //
+        //Gets pokemon's pokedex number and uses that to get the data for the correct pokemon to display in the info window
 
         let pokemonSelect = entry.id.substring(14);
         let pokemon = gamePokemonData.find(x => x[0] == pokemonSelect);
