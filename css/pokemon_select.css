@@ -37,11 +37,16 @@
     overflow-y: scroll;
     position: sticky;
     scroll-snap-align: center;
+    scrollbar-width: 0;
 
     #selected-pokemon-image {
         height: 192px;
         width: 192px;
     }
+}
+
+#selected-pokemon::-webkit-scrollbar {
+    display: none;
 }
 
 @media screen and (min-width: 769px) {

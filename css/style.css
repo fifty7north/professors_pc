@@ -77,6 +77,11 @@ body {
     font-family: 'Amiko';
     font-weight: 400;
     margin: 0;
+    scrollbar-width: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 @keyframes body-splash {
