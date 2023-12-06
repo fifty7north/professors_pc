@@ -301,13 +301,13 @@
     transition: background-color 0.2s;
 }
 
-.game-window-colour-change-rbe,
+.game-window-colour-change-rse,
 .game-window-colour-change-oras {
     background-color: var(--pkmn_ruby);
     transition: background-color 0.2s;
 }
 
-.game-window-colour-change-rbe-accent,
+.game-window-colour-change-rse-accent,
 .game-window-colour-change-oras-accent {
     background-color: var(--pkmn_sapphire);
     transition: background-color 0.2s;

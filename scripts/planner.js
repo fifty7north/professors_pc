@@ -10,7 +10,7 @@ import typeData from './type_data.js';
 //Get game name and game number from url
 
 const selectedGame = window.location.search.substring(6);
-const gameOrder = ['rby', 'gsc', 'rbe', 'frlg', 'dppt', 'hgss', 'bw', 'b2w2', 'xy', 'oras', 'sm', 'usum', 'lgpe', 'swsh', 'bdsp', 'lga', 'sv'];
+const gameOrder = ['rby', 'gsc', 'rse', 'frlg', 'dppt', 'hgss', 'bw', 'b2w2', 'xy', 'oras', 'sm', 'usum', 'lgpe', 'swsh', 'bdsp', 'lga', 'sv'];
 const gameNumber = gameOrder.indexOf(selectedGame);
 
 //Create an array of all pokemon featured in the regional pokedex of the selected game
@@ -75,6 +75,9 @@ gamePokemonData.forEach(pokemon => {
                 pokemonWeaknessArray[1] = pokemonWeaknessArray[1] * 0.5;
             } else if (pokemon[1][variant]['ability'] == 'Levitate') {
                 pokemonWeaknessArray[8] = 0;
+            } else if (pokemon[1][variant]['ability'] == 'Thick Fat') {
+                pokemonWeaknessArray[1] = pokemonWeaknessArray[1] * 0.5;
+                pokemonWeaknessArray[5] = pokemonWeaknessArray[5] * 0.5;
             }
         }
 
@@ -309,9 +312,9 @@ document.querySelectorAll('.pokemon-entry').forEach(entry => {
             let statPath = document.getElementById('selected-pokemon-data-stat-' + stat)
             let baseStatValue = pokemon[1][0]['base_stats'][stat];
             statPath.querySelector('.selected-pokemon-data-stat-value').innerHTML = baseStatValue;
-            let baseStatPercent = ((baseStatValue/256)*100).toFixed(0);
-            statPath.querySelector('.selected-pokemon-data-stat-bar').style.width = baseStatPercent+'%';
-            statPath.querySelector('.selected-pokemon-data-stat-bar-fill').style.backgroundColor = 'hsl('+baseStatPercent*2+', 75%, 45%)';
+            let baseStatPercent = ((baseStatValue / 256) * 100).toFixed(0);
+            statPath.querySelector('.selected-pokemon-data-stat-bar').style.width = baseStatPercent + '%';
+            statPath.querySelector('.selected-pokemon-data-stat-bar-fill').style.backgroundColor = 'hsl(' + baseStatPercent * 2 + ', 75%, 45%)';
         }
     });
 });
@@ -319,9 +322,9 @@ document.querySelectorAll('.pokemon-entry').forEach(entry => {
 //
 
 document.getElementById('selected-pokemon-data-window-select-button-right').addEventListener('click', () => {
-    document.querySelector('.selected-pokemon-data-stats-view').scrollIntoView({behavior: 'smooth'})
+    document.querySelector('.selected-pokemon-data-stats-view').scrollIntoView({ behavior: 'smooth' })
 })
 
 document.getElementById('selected-pokemon-data-window-select-button-left').addEventListener('click', () => {
-    document.querySelector('.selected-pokemon-data-info-view').scrollIntoView({behavior: 'smooth'})
+    document.querySelector('.selected-pokemon-data-info-view').scrollIntoView({ behavior: 'smooth' })
 })
