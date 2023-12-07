@@ -1,110 +1,121 @@
 body {
-    background-color: var(--ui_primary_light);
+  background-color: var(--ui_primary_light);
 }
 
 footer {
-    height: 48px;
+  height: 48px;
+
+  & p {
+    display: none;
+  }
+
+  .mobile-controls {
+    display: flex;
+    height: 100%;
+    justify-content: space-evenly;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+
+    .mobile-controls-button {
+      height: 24px;
+      padding: 12px;
+      width: 24px;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  footer {
+    height: 36px;
 
     & p {
-        display: none;
+      display: block;
     }
 
     .mobile-controls {
-        display: flex;
-        height: 100%;
-        justify-content: space-evenly;
-        left: 0;
-        position: absolute;
-        width: 100vw;
-
-        .mobile-controls-button {
-            height: 24px;
-            padding: 12px;
-            width: 24px;
-        }
+      display: none;
     }
-}
-
-@media screen and (min-width: 769px) {
-    footer {
-        height: 36px;
-
-        & p {
-            display: block;
-        }
-
-        .mobile-controls {
-            display: none;
-        }
-    }
+  }
 }
 
 .page-bg {
-    background-color: var(--ui_primary_light);
-    background-image: linear-gradient(135deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(225deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(45deg, var(--ui_light_1) 25%, transparent 25%), linear-gradient(315deg, var(--ui_light_1) 25%, var(--ui_primary_light) 25%);
-    background-position: 75px 0, 75px 0, 0 0, 0 0;
-    background-size: 150px 150px;
-    background-repeat: repeat;
-    height: 100%;
-    opacity: 0.25;
-    position: fixed;
-    width: 100%;
-    z-index: -100;
+  background-color: var(--ui_primary_light);
+  background-image: linear-gradient(
+      135deg,
+      var(--ui_light_1) 25%,
+      transparent 25%
+    ),
+    linear-gradient(225deg, var(--ui_light_1) 25%, transparent 25%),
+    linear-gradient(45deg, var(--ui_light_1) 25%, transparent 25%),
+    linear-gradient(315deg, var(--ui_light_1) 25%, var(--ui_primary_light) 25%);
+  background-position: 75px 0, 75px 0, 0 0, 0 0;
+  background-size: 150px 150px;
+  background-repeat: repeat;
+  height: 100%;
+  opacity: 0.25;
+  position: fixed;
+  width: 100%;
+  z-index: -100;
 }
 
 .page-bg-accent {
-    bottom: 0;
-    clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0% 100%);
-    height: 50vh;
-    opacity: 1;
-    position: fixed;
-    width: 100%;
-    z-index: -100;
+  bottom: 0;
+  clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0% 100%);
+  height: 50vh;
+  opacity: 1;
+  position: fixed;
+  width: 100%;
+  z-index: -100;
 }
 
 @media screen and (min-width: 769px) {
-    .page-bg-accent {
-        clip-path: polygon(33% 0, 100% 0%, 100% 100%, 0% 100%);
-        height: 100vh;
-        opacity: 1;
-        position: fixed;
-        width: 50%;
-    }
+  .page-bg-accent {
+    clip-path: polygon(33% 0, 100% 0%, 100% 100%, 0% 100%);
+    height: 100vh;
+    opacity: 1;
+    position: fixed;
+    width: 50%;
+  }
 }
 
 #page-bg-accent-light {
-    animation: page-bg-accent-light-fly-in-mobile 0.5s cubic-bezier(.4, .8, .6, 1) forwards;
-    background-color: var(--ui_accent_red_light);
-    right: 0;
+  animation: page-bg-accent-light-fly-in-mobile 0.5s
+    cubic-bezier(0.4, 0.8, 0.6, 1) forwards;
+  background-color: var(--ui_accent_red_light);
+  right: 0;
 
-    & img {
-        height: 70%;
-        padding: 30% 5% 20% 15%;
-        transform: rotate(-30deg);
-        width: 70%;
-    }
+  & img {
+    height: 70%;
+    padding: 30% 5% 20% 15%;
+    transform: rotate(-30deg);
+    width: 70%;
+  }
 }
 
 @media screen and (min-width: 769px) {
-    #page-bg-accent-light {
-        animation: page-bg-accent-light-fly-in-desktop 0.5s cubic-bezier(.4, .8, .6, 1) forwards;
+  #page-bg-accent-light {
+    animation: page-bg-accent-light-fly-in-desktop 0.5s
+      cubic-bezier(0.4, 0.8, 0.6, 1) forwards;
 
-        & img {
-            padding: 25% 5% 5% 20%;
-        }
+    & img {
+      padding: 25% 5% 5% 20%;
     }
+  }
 }
 
 #page-bg-accent-dark {
-    animation: page-bg-accent-dark-fly-in-mobile 0.5s cubic-bezier(.4, .8, .6, 1) forwards;
-    bottom: 5%;
-    background-color: var(--ui_accent_red_dark);
+  animation: page-bg-accent-dark-fly-in-mobile 0.5s
+    cubic-bezier(0.4, 0.8, 0.6, 1) forwards;
+  bottom: 5%;
+  background-color: var(--ui_accent_red_dark);
 }
 
 @media screen and (min-width: 769px) {
-    #page-bg-accent-dark {
-        animation: page-bg-accent-dark-fly-in-desktop 0.5s cubic-bezier(.4, .8, .6, 1) forwards;
-        bottom: 0;
-        right: 10%;
-    }
+  #page-bg-accent-dark {
+    animation: page-bg-accent-dark-fly-in-desktop 0.5s
+      cubic-bezier(0.4, 0.8, 0.6, 1) forwards;
+    bottom: 0;
+    right: 10%;
+  }
 }

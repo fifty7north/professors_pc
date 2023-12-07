@@ -1,164 +1,259 @@
 <!DOCTYPE html>
-<html lang='en'>
-
-<head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Professor's_PC - Pokemon Team Optimiser</title>
-    <meta name="description" content="Pokemon team calculator where you create a pokemon team from your chosen game and calculate the best teammates for your team">
-    <link rel='icon' type='images/x-icon' href='./images/favicon.png'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel='stylesheet' href='./css/style.css'>
-    <link rel='stylesheet' href='./css/planner.css'>
-    <link rel='stylesheet' href='./css/pokemon_select.css'>
+    <meta
+      name="description"
+      content="Pokemon team calculator where you create a pokemon team from your chosen game and calculate the best teammates for your team"
+    />
+    <link rel="icon" type="images/x-icon" href="./images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/planner.css" />
+    <link rel="stylesheet" href="./css/pokemon_select.css" />
     <script src="./scripts/planner.js" type="module"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <div class='navbar-content'>
-            <div class="navbar-logo">
-                <a href="./index.html">Professor's_PC</a>
-            </div>
-            <div class='navbar-settings-container'></div>
+      <div class="navbar-content">
+        <div class="navbar-logo">
+          <a href="./index.html">Professor's_PC</a>
         </div>
-        <div class="navbar-bg">
-            <div class='navbar-bg-accent' style='background-color: var(--ui_primary_dark);'></div>
-        </div>
+        <div class="navbar-settings-container"></div>
+      </div>
+      <div class="navbar-bg">
+        <div
+          class="navbar-bg-accent"
+          style="background-color: var(--ui_primary_dark)"
+        ></div>
+      </div>
     </nav>
     <section id="pokemon-section">
-        <div id="selected-pokemon">
-            <img src="./images/pokeball-black.svg" alt="selected pokemon placeholder image" id="selected-pokemon-image">
-            <div class="selected-pokemon-data">
-                <h4 id="selected-pokemon-data-name">???</h4>
-                <div class="selected-pokemon-data-window">
-                    <div class="selected-pokemon-data-info-view">
-                        <div class="selected-pokemon-data-info-entry">
-                            <p class="selected-pokemon-data-info-header" id="selected-pokemon-data-info-header-national">National Dex</p>
-                            <p class="selected-pokemon-data-info-content" id="selected-pokemon-data-info-content-national">???</p>
-                        </div>
-                        <div class="selected-pokemon-data-info-entry">
-                            <p class="selected-pokemon-data-info-header" id="selected-pokemon-data-info-header-type">Type</p>
-                            <div class="selected-pokemon-data-info-content" id="selected-pokemon-data-info-content-type">
-                                <div id="selected-pokemon-data-info-content-type-1">
-                                    <div><img src="./images/type_icons/pokemon_type_icon_bug.svg" alt="empty pokemon type icon"></div>
-                                    <p>???</p>
-                                </div>
-                                <div id="selected-pokemon-data-info-content-type-2">
-                                    <div><img src="./images/type_icons/pokemon_type_icon_bug.svg" alt="empty pokemon type icon"></div>
-                                    <p>???</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="selected-pokemon-data-info-entry">
-                            <p class="selected-pokemon-data-info-header" id="selected-pokemon-data-info-header-stat">Total Stats</p>
-                            <p class="selected-pokemon-data-info-content" id="selected-pokemon-data-info-content-stat">???</p>
-                        </div>
-                        <div class="selected-pokemon-data-info-entry">
-                            <p class="selected-pokemon-data-info-header" id="selected-pokemon-data-info-header-generation">Generation</p>
-                            <p class="selected-pokemon-data-info-content" id="selected-pokemon-data-info-content-generation">???</p>
-                        </div>
-                        <div class="selected-pokemon-data-window-select-bg">
-                            <div id="selected-pokemon-data-window-select-button-right"></div>
-                        </div>
+      <div id="selected-pokemon">
+        <img
+          src="./images/pokeball-black.svg"
+          alt="selected pokemon placeholder image"
+          id="selected-pokemon-image"
+        />
+        <div class="selected-pokemon-data">
+          <h4 id="selected-pokemon-data-name">???</h4>
+          <div class="selected-pokemon-data-window">
+            <div class="selected-pokemon-data-info-view">
+              <div class="selected-pokemon-data-info-entry">
+                <p
+                  class="selected-pokemon-data-info-header"
+                  id="selected-pokemon-data-info-header-national"
+                >
+                  National Dex
+                </p>
+                <p
+                  class="selected-pokemon-data-info-content"
+                  id="selected-pokemon-data-info-content-national"
+                >
+                  ???
+                </p>
+              </div>
+              <div class="selected-pokemon-data-info-entry">
+                <p
+                  class="selected-pokemon-data-info-header"
+                  id="selected-pokemon-data-info-header-type"
+                >
+                  Type
+                </p>
+                <div
+                  class="selected-pokemon-data-info-content"
+                  id="selected-pokemon-data-info-content-type"
+                >
+                  <div id="selected-pokemon-data-info-content-type-1">
+                    <div>
+                      <img
+                        src="./images/type_icons/pokemon_type_icon_bug.svg"
+                        alt="empty pokemon type icon"
+                      />
                     </div>
-                    <div class="selected-pokemon-data-stats-view">
-                        <div class="selected-pokemon-data-stats">
-                            <div class="selected-pokemon-data-stat"  id="selected-pokemon-data-stat-0">
-                                <small class="selected-pokemon-data-stat-header">HP</small>
-                                <small class="selected-pokemon-data-stat-value">???</small>
-                                <div class="selected-pokemon-data-stat-bar-container">
-                                    <div class="selected-pokemon-data-stat-bar">
-                                        <div class="selected-pokemon-data-stat-bar-fill"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="selected-pokemon-data-stat"  id="selected-pokemon-data-stat-1">
-                                <small class="selected-pokemon-data-stat-header">ATK</small>
-                                <small class="selected-pokemon-data-stat-value">???</small>
-                                <div class="selected-pokemon-data-stat-bar-container">
-                                    <div class="selected-pokemon-data-stat-bar">
-                                        <div class="selected-pokemon-data-stat-bar-fill"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="selected-pokemon-data-stat"  id="selected-pokemon-data-stat-2">
-                                <small class="selected-pokemon-data-stat-header">DEF</small>
-                                <small class="selected-pokemon-data-stat-value">???</small>
-                                <div class="selected-pokemon-data-stat-bar-container">
-                                    <div class="selected-pokemon-data-stat-bar">
-                                        <div class="selected-pokemon-data-stat-bar-fill"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="selected-pokemon-data-stat"  id="selected-pokemon-data-stat-3">
-                                <small class="selected-pokemon-data-stat-header">Sp. ATK</small>
-                                <small class="selected-pokemon-data-stat-value">???</small>
-                                <div class="selected-pokemon-data-stat-bar-container">
-                                    <div class="selected-pokemon-data-stat-bar">
-                                        <div class="selected-pokemon-data-stat-bar-fill"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="selected-pokemon-data-stat"  id="selected-pokemon-data-stat-4">
-                                <small class="selected-pokemon-data-stat-header">Sp. DEF</small>
-                                <small class="selected-pokemon-data-stat-value">???</small>
-                                <div class="selected-pokemon-data-stat-bar-container">
-                                    <div class="selected-pokemon-data-stat-bar">
-                                        <div class="selected-pokemon-data-stat-bar-fill"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="selected-pokemon-data-stat"  id="selected-pokemon-data-stat-5">
-                                <small class="selected-pokemon-data-stat-header">SPD</small>
-                                <small class="selected-pokemon-data-stat-value">???</small>
-                                <div class="selected-pokemon-data-stat-bar-container">
-                                    <div class="selected-pokemon-data-stat-bar">
-                                        <div class="selected-pokemon-data-stat-bar-fill"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="selected-pokemon-data-window-select-bg">
-                            <div id="selected-pokemon-data-window-select-button-left"></div>
-                        </div>
+                    <p>???</p>
+                  </div>
+                  <div id="selected-pokemon-data-info-content-type-2">
+                    <div>
+                      <img
+                        src="./images/type_icons/pokemon_type_icon_bug.svg"
+                        alt="empty pokemon type icon"
+                      />
                     </div>
+                    <p>???</p>
+                  </div>
                 </div>
+              </div>
+              <div class="selected-pokemon-data-info-entry">
+                <p
+                  class="selected-pokemon-data-info-header"
+                  id="selected-pokemon-data-info-header-stat"
+                >
+                  Total Stats
+                </p>
+                <p
+                  class="selected-pokemon-data-info-content"
+                  id="selected-pokemon-data-info-content-stat"
+                >
+                  ???
+                </p>
+              </div>
+              <div class="selected-pokemon-data-info-entry">
+                <p
+                  class="selected-pokemon-data-info-header"
+                  id="selected-pokemon-data-info-header-generation"
+                >
+                  Generation
+                </p>
+                <p
+                  class="selected-pokemon-data-info-content"
+                  id="selected-pokemon-data-info-content-generation"
+                >
+                  ???
+                </p>
+              </div>
+              <div class="selected-pokemon-data-window-select-bg">
+                <div
+                  id="selected-pokemon-data-window-select-button-right"
+                ></div>
+              </div>
             </div>
-            <div class="selected-pokemon-button" id="selected-pokemon-button-add">
-                <div class="selected-pokemon-button-accent"></div>
-                <div class="selected-pokemon-button-content">
-                    <p>Add to team</p>
-                    <img src="./images/pokeball-white.svg" alt="pokeball">
+            <div class="selected-pokemon-data-stats-view">
+              <div class="selected-pokemon-data-stats">
+                <div
+                  class="selected-pokemon-data-stat"
+                  id="selected-pokemon-data-stat-0"
+                >
+                  <small class="selected-pokemon-data-stat-header">HP</small>
+                  <small class="selected-pokemon-data-stat-value">???</small>
+                  <div class="selected-pokemon-data-stat-bar-container">
+                    <div class="selected-pokemon-data-stat-bar">
+                      <div class="selected-pokemon-data-stat-bar-fill"></div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="selected-pokemon-button" id="selected-pokemon-button-back">
-                <div class="selected-pokemon-button-accent"></div>
-                <div class="selected-pokemon-button-content">
-                    <p>Go back</p>
-                    <img src="./images/pokeball-white.svg" alt="pokeball">
+                <div
+                  class="selected-pokemon-data-stat"
+                  id="selected-pokemon-data-stat-1"
+                >
+                  <small class="selected-pokemon-data-stat-header">ATK</small>
+                  <small class="selected-pokemon-data-stat-value">???</small>
+                  <div class="selected-pokemon-data-stat-bar-container">
+                    <div class="selected-pokemon-data-stat-bar">
+                      <div class="selected-pokemon-data-stat-bar-fill"></div>
+                    </div>
+                  </div>
                 </div>
+                <div
+                  class="selected-pokemon-data-stat"
+                  id="selected-pokemon-data-stat-2"
+                >
+                  <small class="selected-pokemon-data-stat-header">DEF</small>
+                  <small class="selected-pokemon-data-stat-value">???</small>
+                  <div class="selected-pokemon-data-stat-bar-container">
+                    <div class="selected-pokemon-data-stat-bar">
+                      <div class="selected-pokemon-data-stat-bar-fill"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="selected-pokemon-data-stat"
+                  id="selected-pokemon-data-stat-3"
+                >
+                  <small class="selected-pokemon-data-stat-header"
+                    >Sp. ATK</small
+                  >
+                  <small class="selected-pokemon-data-stat-value">???</small>
+                  <div class="selected-pokemon-data-stat-bar-container">
+                    <div class="selected-pokemon-data-stat-bar">
+                      <div class="selected-pokemon-data-stat-bar-fill"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="selected-pokemon-data-stat"
+                  id="selected-pokemon-data-stat-4"
+                >
+                  <small class="selected-pokemon-data-stat-header"
+                    >Sp. DEF</small
+                  >
+                  <small class="selected-pokemon-data-stat-value">???</small>
+                  <div class="selected-pokemon-data-stat-bar-container">
+                    <div class="selected-pokemon-data-stat-bar">
+                      <div class="selected-pokemon-data-stat-bar-fill"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="selected-pokemon-data-stat"
+                  id="selected-pokemon-data-stat-5"
+                >
+                  <small class="selected-pokemon-data-stat-header">SPD</small>
+                  <small class="selected-pokemon-data-stat-value">???</small>
+                  <div class="selected-pokemon-data-stat-bar-container">
+                    <div class="selected-pokemon-data-stat-bar">
+                      <div class="selected-pokemon-data-stat-bar-fill"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="selected-pokemon-data-window-select-bg">
+                <div id="selected-pokemon-data-window-select-button-left"></div>
+              </div>
             </div>
+          </div>
         </div>
-        <ul id="pokemon-list">
-
-            <!--Populated with pokemon entries for each pokemon from planner.js-->
-
-        </ul>
+        <div class="selected-pokemon-button" id="selected-pokemon-button-add">
+          <div class="selected-pokemon-button-accent"></div>
+          <div class="selected-pokemon-button-content">
+            <p>Add to team</p>
+            <img src="./images/pokeball-white.svg" alt="pokeball" />
+          </div>
+        </div>
+        <div class="selected-pokemon-button" id="selected-pokemon-button-back">
+          <div class="selected-pokemon-button-accent"></div>
+          <div class="selected-pokemon-button-content">
+            <p>Go back</p>
+            <img src="./images/pokeball-white.svg" alt="pokeball" />
+          </div>
+        </div>
+      </div>
+      <ul id="pokemon-list">
+        <!--Populated with pokemon entries for each pokemon from planner.js-->
+      </ul>
     </section>
     <div class="page-bg"></div>
     <div class="page-bg-accent" id="page-bg-accent-dark"></div>
     <div class="page-bg-accent" id="page-bg-accent-light">
-        <img src="./images/pokeball-white.svg" alt="pokeball" style="opacity: 0.1;">
+      <img
+        src="./images/pokeball-white.svg"
+        alt="pokeball"
+        style="opacity: 0.1"
+      />
     </div>
     <footer>
-        <p>Made by Nathan Moir</p>
-        <div class="mobile-controls" id="mobile-controls-pokemon-section">
-            <img src="./images/pokeball-white.svg" alt="pokemon-search-button" class="mobile-controls-button" id="mobile-pokemon-info-button" style="opacity: 0.25; transition: all 0.2s;">
-            <img src="./images/mobile-search.svg" alt="pokemon-search-button" class="mobile-controls-button" id="mobile-pokemon-search-button" style="opacity: 1; transition: all 0.2s;">
-        </div>
+      <p>Made by Nathan Moir</p>
+      <div class="mobile-controls" id="mobile-controls-pokemon-section">
+        <img
+          src="./images/pokeball-white.svg"
+          alt="pokemon-search-button"
+          class="mobile-controls-button"
+          id="mobile-pokemon-info-button"
+          style="opacity: 0.25; transition: all 0.2s"
+        />
+        <img
+          src="./images/mobile-search.svg"
+          alt="pokemon-search-button"
+          class="mobile-controls-button"
+          id="mobile-pokemon-search-button"
+          style="opacity: 1; transition: all 0.2s"
+        />
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>

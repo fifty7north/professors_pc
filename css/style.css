@@ -1,97 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Pixelify+Sans&family=Amiko:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Amiko:wght@400;700&family=Libre+Barcode+128+Text&family=Megrim&family=Pixelify+Sans&family=Poppins:wght@400;700&display=swap");
 @font-face {
-    font-family: Pokemon-Glyphs;
-    src: url('./ThraexSansRegular-v1000.ttf');
+  font-family: Pokemon-Glyphs;
+  src: url("./ThraexSansRegular-v1000.ttf");
 }
 
-/*
-    Whole page
-*/
-
 :root {
-    /*UI colours*/
-    --ui_primary_light: #FCFCFC;
-    --ui_primary_dark: #0D0D0D;
-    --ui_accent_red_light: #C91D2B;
-    --ui_accent_red_dark: #86131D;
-    --ui_accent_green_light: #ABE830;
-    --ui_accent_green_dark: #77B300;
-    --ui_light_1: #EBEBEB;
-    --ui_light_2: #D9D9D9;
-    --ui_light_3: #BFBFBF;
-    --ui_dark_1: #1A1A1A;
-    --ui_dark_2: #262626;
-    --ui_dark_3: #383838;
-    /*Type colours*/
-    --normal: #A8A77A;
-    --fire: #EE8130;
-    --water: #6390F0;
-    --electric: #F7D02C;
-    --grass: #7AC74C;
-    --ice: #96D9D6;
-    --fighting: #C22E28;
-    --poison: #A33EA1;
-    --ground: #E2BF65;
-    --flying: #A98FF3;
-    --psychic: #F95587;
-    --bug: #A6B91A;
-    --rock: #B6A136;
-    --ghost: #735797;
-    --dragon: #6F35FC;
-    --dark: #705746;
-    --steel: #B7B7CE;
-    --fairy: #D685AD;
-    /*Game colours*/
-    --pkmn_red: #C91D1D;
-    --pkmn_blue: #3333CC;
-    --pkmn_yellow: #FFFF00;
-    --pkmn_gold: #FFBB33;
-    --pkmn_silver: #CCCCCC;
-    --pkmn_crystal: #98C4CD;
-    --pkmn_ruby: #AA0000;
-    --pkmn_sapphire: #0000AA;
-    --pkmn_emerald: #008800;
-    --pkmn_fireRed: #F45925;
-    --pkmn_leafGreen: #A6CC33;
-    --pkmn_diamond: #5CC2D6;
-    --pkmn_pearl: #E87D98;
-    --pkmn_platinum: #CCCCCC;
-    --pkmn_black: #000000;
-    --pkmn_white: #FFFFFF;
-    --pkmn_x: #1D8FC9;
-    --pkmn_y: #EC1313;
-    --pkmn_sun: #F2A60D;
-    --pkmn_moon: #2947A3;
-    --pkmn_letsGoPikachu: #FBDE51;
-    --pkmn_letsGoEevee: #CB8C4D;
-    --pkmn_sword: #00AAFF;
-    --pkmn_shield: #FF0055;
-    --pkmn_legendsArceus: #006699;
-    --pkmn_legendsArceusAccent: #7AB87A;
-    --pkmn_scarlet: #B81414;
-    --pkmn_violet: #5C1F7A;
+  /*UI colours*/
+  --ui_primary_light: #fcfcfc;
+  --ui_primary_dark: #0d0d0d;
+  --ui_accent_red_light: #c91d2b;
+  --ui_accent_red_dark: #86131d;
+  --ui_accent_green_light: #abe830;
+  --ui_accent_green_dark: #77b300;
+  --ui_light_1: #ebebeb;
+  --ui_light_2: #d9d9d9;
+  --ui_light_3: #bfbfbf;
+  --ui_dark_1: #1a1a1a;
+  --ui_dark_2: #262626;
+  --ui_dark_3: #383838;
+  /*Type colours*/
+  --normal: #a8a77a;
+  --fire: #ee8130;
+  --water: #6390f0;
+  --electric: #f7d02c;
+  --grass: #7ac74c;
+  --ice: #96d9d6;
+  --fighting: #c22e28;
+  --poison: #a33ea1;
+  --ground: #e2bf65;
+  --flying: #a98ff3;
+  --psychic: #f95587;
+  --bug: #a6b91a;
+  --rock: #b6a136;
+  --ghost: #735797;
+  --dragon: #6f35fc;
+  --dark: #705746;
+  --steel: #b7b7ce;
+  --fairy: #d685ad;
+  /*Game colours*/
+  --pkmn_red: #c91d1d;
+  --pkmn_blue: #3333cc;
+  --pkmn_yellow: #ffff00;
+  --pkmn_gold: #ffbb33;
+  --pkmn_silver: #cccccc;
+  --pkmn_crystal: #98c4cd;
+  --pkmn_ruby: #aa0000;
+  --pkmn_sapphire: #0000aa;
+  --pkmn_emerald: #008800;
+  --pkmn_fireRed: #f45925;
+  --pkmn_leafGreen: #a6cc33;
+  --pkmn_diamond: #5cc2d6;
+  --pkmn_pearl: #e87d98;
+  --pkmn_platinum: #cccccc;
+  --pkmn_black: #000000;
+  --pkmn_white: #ffffff;
+  --pkmn_x: #1d8fc9;
+  --pkmn_y: #ec1313;
+  --pkmn_sun: #f2a60d;
+  --pkmn_moon: #2947a3;
+  --pkmn_letsGoPikachu: #fbde51;
+  --pkmn_letsGoEevee: #cb8c4d;
+  --pkmn_sword: #00aaff;
+  --pkmn_shield: #ff0055;
+  --pkmn_legendsArceus: #006699;
+  --pkmn_legendsArceusAccent: #7ab87a;
+  --pkmn_scarlet: #b81414;
+  --pkmn_violet: #5c1f7a;
 }
 
 body {
-    font-family: 'Amiko';
-    font-weight: 400;
-    margin: 0;
-    scrollbar-width: 0;
+  font-family: "Amiko";
+  font-weight: 400;
+  margin: 0;
+  scrollbar-width: 0;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 @keyframes body-splash {
-    0% {
-        background-color: var(--ui_primary_dark);
-    }
+  0% {
+    background-color: var(--ui_primary_dark);
+  }
 
-    100% {
-        background-color: var(--ui_primary_light);
-    }
+  100% {
+    background-color: var(--ui_primary_light);
+  }
 }
 
 h1,
@@ -99,42 +94,42 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Amiko';
-    font-weight: 700;
+  font-family: "Poppins";
+  font-weight: 700;
 }
 
 html {
-    font-size: 75%;
+  font-size: 75%;
 }
 
 @media screen and (min-width: 769px) {
-    html {
-        font-size: 100%;
-    }
+  html {
+    font-size: 100%;
+  }
 }
 
 h1 {
-    font-size: 4.210rem;
+  font-size: 4.21rem;
 }
 
 h2 {
-    font-size: 3.158rem;
+  font-size: 3.158rem;
 }
 
 h3 {
-    font-size: 2.369rem;
+  font-size: 2.369rem;
 }
 
 h4 {
-    font-size: 1.777rem;
+  font-size: 1.777rem;
 }
 
 h5 {
-    font-size: 1.333rem;
+  font-size: 1.333rem;
 }
 
 small {
-    font-size: 0.750rem;
+  font-size: 0.75rem;
 }
 
 /*
@@ -142,75 +137,74 @@ small {
 */
 
 nav {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    height: 48px;
-    width: 100%;
-    z-index: 100;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 48px;
+  width: 100%;
+  z-index: 100;
 }
 
 .navbar-content {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 48px;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+
+  .navbar-logo {
+    flex: 2;
+
+    & a {
+      color: var(--ui_primary_light);
+      font-family: "Pixelify Sans";
+      font-size: 1.777rem;
+      margin: 0 0 0 20px;
+      text-decoration: none;
+      text-shadow: 0.125em 0.125em 0 var(--ui_primary_dark);
+      user-select: none;
+    }
+  }
+
+  .navbar-settings-container {
+    flex: 1;
     height: 48px;
-    position: absolute;
-    width: 100%;
-    z-index: 100;
-
-    .navbar-logo {
-        flex: 2;
-
-        & a {
-            color: var(--ui_primary_light);
-            font-family: 'Pixelify Sans';
-            font-size: 1.777rem;
-            margin: 0 0 0 20px;
-            text-decoration: none;
-            text-shadow: 0.125em 0.125em 0 var(--ui_primary_dark);
-            user-select: none;
-        }
-    }
-
-    
-    .navbar-settings-container {
-        flex: 1;
-        height: 48px;
-    }
+  }
 }
 
 .navbar-bg {
-    background-color: var(--ui_accent_red_light);
-    display: flex;
-    height: 48px;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    z-index: 99;
+  background-color: var(--ui_accent_red_light);
+  display: flex;
+  height: 48px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 99;
 
-    .navbar-bg-accent {
-        clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0% 100%);
-        height: 100vh;
-        position: absolute;
-        right: -1.45%;
-        width: 50%;
-    }
+  .navbar-bg-accent {
+    clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0% 100%);
+    height: 100vh;
+    position: absolute;
+    right: -1.45%;
+    width: 50%;
+  }
 }
 
 footer {
-    align-items: center;
-    background-color: var(--ui_primary_dark);
-    bottom: 0px;
-    display: flex;
-    font-family: 'Pixelify Sans';
-    position: fixed;
-    padding: 0 20px;
-    height: 36px;
-    width: 100%;
-    z-index: 99;
+  align-items: center;
+  background-color: var(--ui_primary_dark);
+  bottom: 0px;
+  display: flex;
+  font-family: "Pixelify Sans";
+  position: fixed;
+  padding: 0 20px;
+  height: 36px;
+  width: 100%;
+  z-index: 99;
 
-    & p {
-        color: white;
-    }
+  & p {
+    color: white;
+  }
 }

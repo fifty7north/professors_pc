@@ -1,769 +1,3222 @@
 <!DOCTYPE html>
-<html lang='en'>
-
-<head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Professor's_PC - Pokemon Team Optimiser</title>
-    <meta name="description" content="Professor's PC is a feature complete pokemon team creator, allowing you to create a team for your chosen pokemon game and calculate the best team members to fill in your team">
-    <link rel='icon' type='images/x-icon' href='./images/favicon.png'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel='stylesheet' href='./css/style.css'>
-    <link rel='stylesheet' href='./css/splash.css'>
-    <link rel='stylesheet' href='./css/menu.css'>
-    <script src='./scripts/menu.js' type='module'></script>
-</head>
+    <meta
+      name="description"
+      content="Professor's PC is a feature complete pokemon team creator, allowing you to create a team for your chosen pokemon game and calculate the best team members to fill in your team"
+    />
+    <link rel="icon" type="images/x-icon" href="./images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/splash.css" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <script src="./scripts/menu.js" type="module"></script>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <div class='navbar-content'>
-            <div class="navbar-logo">
-                <a href="./index.html">Professor's_PC</a>
-            </div>
-            <div class='navbar-settings-container'></div>
+      <div class="navbar-content">
+        <div class="navbar-logo">
+          <a href="./index.html">Professor's_PC</a>
         </div>
-        <div class="navbar-bg">
-            <div class='navbar-bg-accent' style='background-color: var(--ui_primary_dark);'></div>
-        </div>
+        <div class="navbar-settings-container"></div>
+      </div>
+      <div class="navbar-bg">
+        <div
+          class="navbar-bg-accent"
+          style="background-color: var(--ui_primary_dark)"
+        ></div>
+      </div>
     </nav>
-    <section class='splash-screen-section'>
-        <div class='splash-menu-screen'></div>
-        <div class='splash-animation-top'></div>
-        <div class='splash-animation-bottom'></div>
+    <section class="splash-screen-section">
+      <div class="splash-menu-screen"></div>
+      <div class="splash-animation-top"></div>
+      <div class="splash-animation-bottom"></div>
     </section>
-    <section class='main-menu-section'>
-        <div class="page-bg"></div>
-        <div class='main-menu-wrapper'>
-            <div class='main-menu'>
-                <div class='main-menu-header'>
-                    <div id='main-menu-header-welcome'>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-0' data-letter='W'>W</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-1' data-letter='E'>E</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-2' data-letter='L'>L</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-3' data-letter='C'>C</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-4' data-letter='O'>O</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-5' data-letter='M'>M</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-6' data-letter='E'>E</h2>
-                    </div>
-                    <div id='main-menu-header-to'>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-7' data-letter='T'>T</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-8' data-letter='O'>O</h2>
-                    </div>
-                    <div id='main-menu-header-professors'>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-9' data-letter='P'>P</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-10' data-letter='R'>R</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-11' data-letter='O'>O</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-12' data-letter='F'>F</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-13' data-letter='E'>E</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-14' data-letter='S'>S</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-15' data-letter='S'>S</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-16' data-letter='O'>O</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-17' data-letter='R'>R</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-18' data-letter='S'>S</h2>
-                    </div>
-                    <div id='main-menu-header-pc'>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-19' data-letter='P'>P</h2>
-                        <h2 class='main-menu-header-text' id='main-menu-header-text-20' data-letter='C'>C</h2>
-                    </div>
-                </div>
-                <div class='main-menu-content'>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=rby"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='00-window-info-text-0' data-letter='R'>R</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-1' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-2' data-letter='d'>d</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-3' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-4' data-letter='B'>B</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-5' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-6' data-letter='u'>u</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-7' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-8' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-9' data-letter='Y'>Y</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-10' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-11' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-12' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-13' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='00-window-info-text-14' data-letter='w'>w</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-rby'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>rby</p>
-                                <div class="game-window-image-grid">
-                                    <div><img src="./images/pokemon_sprites/venusaur.png" alt="venusaur" class="menu-sprite-default"></div>
-                                    <div><img src="./images/pokemon_sprites/charizard.png" alt="charizard" class="menu-sprite-default"></div>
-                                    <div><img src="./images/pokemon_sprites/blastoise.png" alt="blastoise" class="menu-sprite-default"></div>
-                                    <div><img src="./images/pokemon_sprites/pikachu.png" alt="pikachu" class="menu-sprite-default"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=gsc"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='01-window-info-text-0' data-letter='G'>G</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-1' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-2' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-3' data-letter='d'>d</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-4' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-5' data-letter='S'>S</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-6' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-7' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-8' data-letter='v'>v</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-8' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-10' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-11' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-12' data-letter='C'>C</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-13' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-14' data-letter='y'>y</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-15' data-letter='s'>s</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-16' data-letter='t'>t</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-17' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='01-window-info-text-18' data-letter='l'>l</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-gsc'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>gsc</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/meganium.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/typhlosion.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/feraligatr.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/ho-oh.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/lugia.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/suicune.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=rse"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='02-window-info-text-0' data-letter='R'>R</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-1' data-letter='u'>u</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-2' data-letter='b'>b</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-3' data-letter='y'>y</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-4' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-5' data-letter='S'>S</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-6' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-7' data-letter='p'>p</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-8' data-letter='p'>p</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-8' data-letter='h'>h</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-10' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-11' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-12' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-13' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-14' data-letter='E'>E</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-15' data-letter='m'>m</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-16' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-17' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-18' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-19' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='02-window-info-text-20' data-letter='d'>d</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-rse'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>rse</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/sceptile.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/blaziken.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/swampert.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/groudon.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/kyogre.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/rayquaza.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=frlg"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='03-window-info-text-0' data-letter='F'>F</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-1' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-2' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-3' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-4' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-5' data-letter='R'>R</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-6' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-7' data-letter='d'>d</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-8' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-8' data-letter='L'>L</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-10' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-11' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-12' data-letter='f'>f</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-13' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-14' data-letter='G'>G</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-15' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-16' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-17' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='03-window-info-text-18' data-letter='n'>n</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default'
-                            id='game-window-info-bg-frlg'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>frlg</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/venusaur.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/charizard.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/blastoise.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=dppt"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='04-window-info-text-0' data-letter='D'>D</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-1' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-2' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-3' data-letter='m'>m</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-4' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-5' data-letter='n'>n</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-6' data-letter='d'>d</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-7' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-8' data-letter='P'>P</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-8' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-10' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-11' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-12' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-13' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-14' data-letter='P'>P</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-15' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-16' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-17' data-letter='t'>t</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-18' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-19' data-letter='n'>n</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-20' data-letter='u'>u</p>
-                            <p class='game-window-info-title-text' id='04-window-info-text-21' data-letter='m'>m</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default'
-                            id='game-window-info-bg-dppt'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>dppt</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/torterra.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/infernape.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/empoleon.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/dialga.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/palkia.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/giratina-altered.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=hgss"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='05-window-info-text-0' data-letter='H'>H</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-1' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-2' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-3' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-4' data-letter='t'>t</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-5' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-6' data-letter='G'>G</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-7' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-8' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-9' data-letter='d'>d</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-10' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-11' data-letter='S'>S</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-12' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-13' data-letter='u'>u</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-14' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-15' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-16' data-letter='S'>S</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-17' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-18' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-19' data-letter='v'>v</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-20' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='05-window-info-text-21' data-letter='r'>r</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default'
-                            id='game-window-info-bg-hgss'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>hgss</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/meganium.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/typhlosion.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/feraligatr.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/ho-oh.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/lugia.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=bw"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='06-window-info-text-0' data-letter='B'>B</p>
-                            <p class='game-window-info-title-text' id='06-window-info-text-1' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='06-window-info-text-2' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='06-window-info-text-3' data-letter='c'>c</p>
-                            <p class='game-window-info-title-text' id='06-window-info-text-4' data-letter='k'>k</p>
-                            <p class='game-window-info-title-text' id='06-window-info-text-5' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='06-window-info-text-6' data-letter='W'>W</p>
-                            <p class='game-window-info-title-text' id='06-window-info-text-7' data-letter='h'>h</p>
-                            <p class='game-window-info-title-text' id='06-window-info-text-8' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='06-window-info-text-9' data-letter='t'>t</p>
-                            <p class='game-window-info-title-text' id='06-window-info-text-10' data-letter='e'>e</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-bw'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>bw</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/serperior.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/emboar.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/samurott.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/reshiram.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/zekrom.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=b2w2"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='07-window-info-text-0' data-letter='B'>B</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-1' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-2' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-3' data-letter='c'>c</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-4' data-letter='k'>k</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-5' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-6' data-letter='2'>2</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-7' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-8' data-letter='W'>W</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-9' data-letter='h'>h</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-10' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-11' data-letter='t'>t</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-12' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-13' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='07-window-info-text-14' data-letter='2'>2</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default'
-                            id='game-window-info-bg-b2w2'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>b2w2</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/serperior.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/emboar.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/samurott.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/kyurem-black.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/kyurem-white.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=xy"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='08-window-info-text-0' data-letter='X'>X</p>
-                            <p class='game-window-info-title-text' id='08-window-info-text-1' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='08-window-info-text-2' data-letter='Y'>Y</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-xy'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>xy</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/chesnaught.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/delphox.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/greninja.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/xerneas.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/yveltal.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=oras"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='09-window-info-text-0' data-letter='O'>O</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-1' data-letter='m'>m</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-2' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-3' data-letter='g'>g</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-4' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-5' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-6' data-letter='R'>R</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-7' data-letter='u'>u</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-8' data-letter='b'>b</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-8' data-letter='y'>y</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-10' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-11' data-letter='A'>A</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-12' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-13' data-letter='p'>p</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-14' data-letter='h'>h</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-15' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-16' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-17' data-letter='S'>S</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-18' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-19' data-letter='p'>p</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-20' data-letter='p'>p</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-21' data-letter='h'>h</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-22' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-23' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='09-window-info-text-24' data-letter='e'>e</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default'
-                            id='game-window-info-bg-oras'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>oras</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/sceptile.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/blaziken.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/swampert.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/groudon-primal.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/kyogre-primal.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=sm"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='10-window-info-text-0' data-letter='S'>S</p>
-                            <p class='game-window-info-title-text' id='10-window-info-text-1' data-letter='u'>u</p>
-                            <p class='game-window-info-title-text' id='10-window-info-text-2' data-letter='n'>n</p>
-                            <p class='game-window-info-title-text' id='10-window-info-text-3' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='10-window-info-text-4' data-letter='M'>M</p>
-                            <p class='game-window-info-title-text' id='10-window-info-text-5' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='10-window-info-text-6' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='10-window-info-text-7' data-letter='n'>n</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-sm'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>sm</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/decidueye.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/incineroar.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/primarina.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/solgaleo.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/lunala.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=usum"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='11-window-info-text-0' data-letter='U'>U</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-1' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-2' data-letter='t'>t</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-3' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-4' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-5' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-6' data-letter='S'>S</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-7' data-letter='u'>u</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-8' data-letter='n'>n</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-9' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-10' data-letter='U'>U</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-11' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-12' data-letter='t'>t</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-13' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-14' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-15' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-16' data-letter='M'>M</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-17' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-18' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='11-window-info-text-19' data-letter='n'>n</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default'
-                            id='game-window-info-bg-usum'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>usum</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/decidueye.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/incineroar.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/primarina.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/necrozma-dusk-mane.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/necrozma-dawn-wings.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=lgpe"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='12-window-info-text-0' data-letter='L'>L</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-1' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-2' data-letter='t'>t</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-3' data-letter='s'>s</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-4' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-5' data-letter='G'>G</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-6' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-7' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-8' data-letter='P'>P</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-9' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-10' data-letter='k'>k</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-11' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-12' data-letter='c'>c</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-13' data-letter='h'>h</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-14' data-letter='u'>u</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-18' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-15' data-letter='E'>E</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-16' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-17' data-letter='v'>v</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-19' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='12-window-info-text-20' data-letter='e'>e</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default'
-                            id='game-window-info-bg-lgpe'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>lgpe</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/venusaur.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/charizard.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/blastoise.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/pikachu.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/eevee.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=swsh"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='13-window-info-text-0' data-letter='S'>S</p>
-                            <p class='game-window-info-title-text' id='13-window-info-text-1' data-letter='w'>w</p>
-                            <p class='game-window-info-title-text' id='13-window-info-text-2' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='13-window-info-text-3' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='13-window-info-text-4' data-letter='d'>d</p>
-                            <p class='game-window-info-title-text' id='13-window-info-text-5' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='13-window-info-text-6' data-letter='S'>S</p>
-                            <p class='game-window-info-title-text' id='13-window-info-text-7' data-letter='h'>h</p>
-                            <p class='game-window-info-title-text' id='13-window-info-text-8' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='13-window-info-text-9' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='13-window-info-text-10' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='13-window-info-text-11' data-letter='d'>d</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default'
-                            id='game-window-info-bg-swsh'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>swsh</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/rillaboom.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/cinderace.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/inteleon.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/zacian.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/zamazenta.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=bdsp"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='14-window-info-text-0' data-letter='B'>B</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-1' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-2' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-3' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-4' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-6' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-7' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-8' data-letter='n'>n</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-9' data-letter='t'>t</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-10' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-11' data-letter='D'>D</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-12' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-13' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-14' data-letter='m'>m</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-15' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-16' data-letter='n'>n</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-17' data-letter='d'>d</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-18' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-19' data-letter='S'>S</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-20' data-letter='h'>h</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-21' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-22' data-letter='n'>n</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-23' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-24' data-letter='n'>n</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-25' data-letter='g'>g</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-26' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-27' data-letter='P'>P</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-28' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-29' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-30' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='14-window-info-text-31' data-letter='l'>l</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default'
-                            id='game-window-info-bg-bdsp'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>bdsp</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/torterra.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/infernape.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/empoleon.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/dialga.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/palkia.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=lga"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='15-window-info-text-0' data-letter='L'>L</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-1' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-2' data-letter='g'>g</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-3' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-4' data-letter='n'>n</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-5' data-letter='d'>d</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-6' data-letter='s'>s</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-7' data-letter='‏‏‎ ‎'>‏‏‎ ‎
-                            </p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-8' data-letter='A'>A</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-9' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-10' data-letter='c'>c</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-11' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-12' data-letter='u'>u</p>
-                            <p class='game-window-info-title-text' id='15-window-info-text-13' data-letter='s'>s</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-lga'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>lga</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/decidueye-hisuian.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/typhlosion-hisuian.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/samurott-hisuian.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/arceus.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                    <div class='main-menu-game-window'>
-                        <a class='game-window-hover' href="./planner.html?game=sv"></a>
-                        <div class='game-window-info-title'>
-                            <p class='game-window-info-title-text' id='16-window-info-text-0' data-letter='S'>S</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-1' data-letter='c'>c</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-2' data-letter='a'>a</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-3' data-letter='r'>r</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-4' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-6' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-7' data-letter='t'>t</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-8' data-letter='/'>/</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-9' data-letter='V'>V</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-10' data-letter='i'>i</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-11' data-letter='o'>o</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-12' data-letter='l'>l</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-13' data-letter='e'>e</p>
-                            <p class='game-window-info-title-text' id='16-window-info-text-14' data-letter='t'>t</p>
-                        </div>
-                        <div class='game-window-info-bg game-window-colour-change-default' id='game-window-info-bg-sv'>
-                            <div class='game-window-info-accent game-window-colour-change-default-accent'></div>
-                        </div>
-                        <div class='game-window-image-container'>
-                            <div class="game-window-image-border">
-                                <p>lgpe</p>
-                                <div class="game-window-image-grid">
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/meowscarada.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/skeledirge.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/quaquaval.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/koraidon.png"></div>
-                                    <div><img class="menu-sprite-default" src="./images/pokemon_sprites/miraidon.png"></div>
-                                </div>
-                            </div>
-                            <div class='game-window-image-bg-accent-dark-default'></div>
-                            <div class='game-window-image-bg-accent-light-default'></div>
-                        </div>
-                    </div>
-                </div>
+    <section class="main-menu-section">
+      <div class="page-bg"></div>
+      <div class="main-menu-wrapper">
+        <div class="main-menu">
+          <div class="main-menu-header">
+            <div id="main-menu-header-welcome">
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-0"
+                data-letter="W"
+              >
+                W
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-1"
+                data-letter="E"
+              >
+                E
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-2"
+                data-letter="L"
+              >
+                L
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-3"
+                data-letter="C"
+              >
+                C
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-4"
+                data-letter="O"
+              >
+                O
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-5"
+                data-letter="M"
+              >
+                M
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-6"
+                data-letter="E"
+              >
+                E
+              </h2>
             </div>
+            <div id="main-menu-header-to">
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-7"
+                data-letter="T"
+              >
+                T
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-8"
+                data-letter="O"
+              >
+                O
+              </h2>
+            </div>
+            <div id="main-menu-header-professors">
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-9"
+                data-letter="P"
+              >
+                P
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-10"
+                data-letter="R"
+              >
+                R
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-11"
+                data-letter="O"
+              >
+                O
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-12"
+                data-letter="F"
+              >
+                F
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-13"
+                data-letter="E"
+              >
+                E
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-14"
+                data-letter="S"
+              >
+                S
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-15"
+                data-letter="S"
+              >
+                S
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-16"
+                data-letter="O"
+              >
+                O
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-17"
+                data-letter="R"
+              >
+                R
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-18"
+                data-letter="S"
+              >
+                S
+              </h2>
+            </div>
+            <div id="main-menu-header-pc">
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-19"
+                data-letter="P"
+              >
+                P
+              </h2>
+              <h2
+                class="main-menu-header-text"
+                id="main-menu-header-text-20"
+                data-letter="C"
+              >
+                C
+              </h2>
+            </div>
+          </div>
+          <div class="main-menu-content">
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=rby"
+                class="game-window-hover"
+                aria-label="pokemon red/blue/yellow"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-0"
+                  data-letter="R"
+                >
+                  R
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-1"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-2"
+                  data-letter="d"
+                >
+                  d
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-3"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-4"
+                  data-letter="B"
+                >
+                  B
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-5"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-6"
+                  data-letter="u"
+                >
+                  u
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-7"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-8"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-9"
+                  data-letter="Y"
+                >
+                  Y
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-10"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-11"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-12"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-13"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="00-window-info-text-14"
+                  data-letter="w"
+                >
+                  w
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-rby"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">rby</p>
+                  <p class="game-window-text-2">RBY</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        src="./images/pokemon_sprites/venusaur.png"
+                        alt="venusaur"
+                        class="menu-sprite-default"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="./images/pokemon_sprites/charizard.png"
+                        alt="charizard"
+                        class="menu-sprite-default"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="./images/pokemon_sprites/blastoise.png"
+                        alt="blastoise"
+                        class="menu-sprite-default"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="./images/pokemon_sprites/pikachu.png"
+                        alt="pikachu"
+                        class="menu-sprite-default"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=gsc"
+                class="game-window-hover"
+                aria-label="pokemon gold/silver/crystal"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-0"
+                  data-letter="G"
+                >
+                  G
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-1"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-2"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-3"
+                  data-letter="d"
+                >
+                  d
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-4"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-5"
+                  data-letter="S"
+                >
+                  S
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-6"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-7"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-8"
+                  data-letter="v"
+                >
+                  v
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-8"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-10"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-11"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-12"
+                  data-letter="C"
+                >
+                  C
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-13"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-14"
+                  data-letter="y"
+                >
+                  y
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-15"
+                  data-letter="s"
+                >
+                  s
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-16"
+                  data-letter="t"
+                >
+                  t
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-17"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="01-window-info-text-18"
+                  data-letter="l"
+                >
+                  l
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-gsc"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">gsc</p>
+                  <p class="game-window-text-2">GSC</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/meganium.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/typhlosion.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/feraligatr.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/ho-oh.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/lugia.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/suicune.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=rse"
+                class="game-window-hover"
+                aria-label="pokemon ruby/sapphire/emerald"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-0"
+                  data-letter="R"
+                >
+                  R
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-1"
+                  data-letter="u"
+                >
+                  u
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-2"
+                  data-letter="b"
+                >
+                  b
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-3"
+                  data-letter="y"
+                >
+                  y
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-4"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-5"
+                  data-letter="S"
+                >
+                  S
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-6"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-7"
+                  data-letter="p"
+                >
+                  p
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-8"
+                  data-letter="p"
+                >
+                  p
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-8"
+                  data-letter="h"
+                >
+                  h
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-10"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-11"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-12"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-13"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-14"
+                  data-letter="E"
+                >
+                  E
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-15"
+                  data-letter="m"
+                >
+                  m
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-16"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-17"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-18"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-19"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="02-window-info-text-20"
+                  data-letter="d"
+                >
+                  d
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-rse"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">rse</p>
+                  <p class="game-window-text-2">RSE</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/sceptile.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/blaziken.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/swampert.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/groudon.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/kyogre.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/rayquaza.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=frlg"
+                class="game-window-hover"
+                aria-label="pokemon fire red/leaf green"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-0"
+                  data-letter="F"
+                >
+                  F
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-1"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-2"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-3"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-4"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-5"
+                  data-letter="R"
+                >
+                  R
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-6"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-7"
+                  data-letter="d"
+                >
+                  d
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-8"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-8"
+                  data-letter="L"
+                >
+                  L
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-10"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-11"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-12"
+                  data-letter="f"
+                >
+                  f
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-13"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-14"
+                  data-letter="G"
+                >
+                  G
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-15"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-16"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-17"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="03-window-info-text-18"
+                  data-letter="n"
+                >
+                  n
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-frlg"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">frlg</p>
+                  <p class="game-window-text-2">FRLG</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/venusaur.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/charizard.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/blastoise.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=dppt"
+                class="game-window-hover"
+                aria-label="pokemon diamond/pearl/platinum"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-0"
+                  data-letter="D"
+                >
+                  D
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-1"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-2"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-3"
+                  data-letter="m"
+                >
+                  m
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-4"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-5"
+                  data-letter="n"
+                >
+                  n
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-6"
+                  data-letter="d"
+                >
+                  d
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-7"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-8"
+                  data-letter="P"
+                >
+                  P
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-8"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-10"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-11"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-12"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-13"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-14"
+                  data-letter="P"
+                >
+                  P
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-15"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-16"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-17"
+                  data-letter="t"
+                >
+                  t
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-18"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-19"
+                  data-letter="n"
+                >
+                  n
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-20"
+                  data-letter="u"
+                >
+                  u
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="04-window-info-text-21"
+                  data-letter="m"
+                >
+                  m
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-dppt"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">dppt</p>
+                  <p class="game-window-text-2">DPPT</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/torterra.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/infernape.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/empoleon.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/dialga.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/palkia.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/giratina-altered.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=hgss"
+                class="game-window-hover"
+                aria-label="pokemon heart gold/soul silver"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-0"
+                  data-letter="H"
+                >
+                  H
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-1"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-2"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-3"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-4"
+                  data-letter="t"
+                >
+                  t
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-5"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-6"
+                  data-letter="G"
+                >
+                  G
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-7"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-8"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-9"
+                  data-letter="d"
+                >
+                  d
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-10"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-11"
+                  data-letter="S"
+                >
+                  S
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-12"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-13"
+                  data-letter="u"
+                >
+                  u
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-14"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-15"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-16"
+                  data-letter="S"
+                >
+                  S
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-17"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-18"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-19"
+                  data-letter="v"
+                >
+                  v
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-20"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="05-window-info-text-21"
+                  data-letter="r"
+                >
+                  r
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-hgss"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">hgss</p>
+                  <p class="game-window-text-2">HGSS</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/meganium.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/typhlosion.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/feraligatr.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/ho-oh.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/lugia.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=bw"
+                class="game-window-hover"
+                aria-label="pokemon black/white"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="06-window-info-text-0"
+                  data-letter="B"
+                >
+                  B
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="06-window-info-text-1"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="06-window-info-text-2"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="06-window-info-text-3"
+                  data-letter="c"
+                >
+                  c
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="06-window-info-text-4"
+                  data-letter="k"
+                >
+                  k
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="06-window-info-text-5"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="06-window-info-text-6"
+                  data-letter="W"
+                >
+                  W
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="06-window-info-text-7"
+                  data-letter="h"
+                >
+                  h
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="06-window-info-text-8"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="06-window-info-text-9"
+                  data-letter="t"
+                >
+                  t
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="06-window-info-text-10"
+                  data-letter="e"
+                >
+                  e
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-bw"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">bw</p>
+                  <p class="game-window-text-2">BW</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/serperior.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/emboar.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/samurott.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/reshiram.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/zekrom.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=b2w2"
+                class="game-window-hover"
+                aria-label="pokemon black 2/white 2"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-0"
+                  data-letter="B"
+                >
+                  B
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-1"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-2"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-3"
+                  data-letter="c"
+                >
+                  c
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-4"
+                  data-letter="k"
+                >
+                  k
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-5"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-6"
+                  data-letter="2"
+                >
+                  2
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-7"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-8"
+                  data-letter="W"
+                >
+                  W
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-9"
+                  data-letter="h"
+                >
+                  h
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-10"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-11"
+                  data-letter="t"
+                >
+                  t
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-12"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-13"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="07-window-info-text-14"
+                  data-letter="2"
+                >
+                  2
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-b2w2"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">b2w2</p>
+                  <p class="game-window-text-2">B2W2</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/serperior.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/emboar.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/samurott.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/kyurem-black.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/kyurem-white.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=xy"
+                class="game-window-hover"
+                aria-label="pokemon x/y"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="08-window-info-text-0"
+                  data-letter="X"
+                >
+                  X
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="08-window-info-text-1"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="08-window-info-text-2"
+                  data-letter="Y"
+                >
+                  Y
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-xy"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">xy</p>
+                  <p class="game-window-text-2">XY</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/chesnaught.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/delphox.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/greninja.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/xerneas.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/yveltal.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=oras"
+                class="game-window-hover"
+                aria-label="pokemon omega ruby/alpha sapphire"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-0"
+                  data-letter="O"
+                >
+                  O
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-1"
+                  data-letter="m"
+                >
+                  m
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-2"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-3"
+                  data-letter="g"
+                >
+                  g
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-4"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-5"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-6"
+                  data-letter="R"
+                >
+                  R
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-7"
+                  data-letter="u"
+                >
+                  u
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-8"
+                  data-letter="b"
+                >
+                  b
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-8"
+                  data-letter="y"
+                >
+                  y
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-10"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-11"
+                  data-letter="A"
+                >
+                  A
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-12"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-13"
+                  data-letter="p"
+                >
+                  p
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-14"
+                  data-letter="h"
+                >
+                  h
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-15"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-16"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-17"
+                  data-letter="S"
+                >
+                  S
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-18"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-19"
+                  data-letter="p"
+                >
+                  p
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-20"
+                  data-letter="p"
+                >
+                  p
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-21"
+                  data-letter="h"
+                >
+                  h
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-22"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-23"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="09-window-info-text-24"
+                  data-letter="e"
+                >
+                  e
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-oras"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">oras</p>
+                  <p class="game-window-text-2">ORAS</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/sceptile.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/blaziken.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/swampert.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/groudon-primal.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/kyogre-primal.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=sm"
+                class="game-window-hover"
+                aria-label="pokemon sun/moon"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="10-window-info-text-0"
+                  data-letter="S"
+                >
+                  S
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="10-window-info-text-1"
+                  data-letter="u"
+                >
+                  u
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="10-window-info-text-2"
+                  data-letter="n"
+                >
+                  n
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="10-window-info-text-3"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="10-window-info-text-4"
+                  data-letter="M"
+                >
+                  M
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="10-window-info-text-5"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="10-window-info-text-6"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="10-window-info-text-7"
+                  data-letter="n"
+                >
+                  n
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-sm"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">sm</p>
+                  <p class="game-window-text-2">SM</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/decidueye.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/incineroar.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/primarina.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/solgaleo.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/lunala.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=usum"
+                class="game-window-hover"
+                aria-label="pokemon ultra sun/ultra moon"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-0"
+                  data-letter="U"
+                >
+                  U
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-1"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-2"
+                  data-letter="t"
+                >
+                  t
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-3"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-4"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-5"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-6"
+                  data-letter="S"
+                >
+                  S
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-7"
+                  data-letter="u"
+                >
+                  u
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-8"
+                  data-letter="n"
+                >
+                  n
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-9"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-10"
+                  data-letter="U"
+                >
+                  U
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-11"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-12"
+                  data-letter="t"
+                >
+                  t
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-13"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-14"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-15"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-16"
+                  data-letter="M"
+                >
+                  M
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-17"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-18"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="11-window-info-text-19"
+                  data-letter="n"
+                >
+                  n
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-usum"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">usum</p>
+                  <p class="game-window-text-2">USUM</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/decidueye.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/incineroar.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/primarina.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/necrozma-dusk-mane.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/necrozma-dawn-wings.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=lgpe"
+                class="game-window-hover"
+                aria-label="pokemon let's go pikachu/eevee"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-0"
+                  data-letter="L"
+                >
+                  L
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-1"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-2"
+                  data-letter="t"
+                >
+                  t
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-3"
+                  data-letter="s"
+                >
+                  s
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-4"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-5"
+                  data-letter="G"
+                >
+                  G
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-6"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-7"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-8"
+                  data-letter="P"
+                >
+                  P
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-9"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-10"
+                  data-letter="k"
+                >
+                  k
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-11"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-12"
+                  data-letter="c"
+                >
+                  c
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-13"
+                  data-letter="h"
+                >
+                  h
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-14"
+                  data-letter="u"
+                >
+                  u
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-18"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-15"
+                  data-letter="E"
+                >
+                  E
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-16"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-17"
+                  data-letter="v"
+                >
+                  v
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-19"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="12-window-info-text-20"
+                  data-letter="e"
+                >
+                  e
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-lgpe"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">lgpe</p>
+                  <p class="game-window-text-2">LGPE</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/venusaur.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/charizard.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/blastoise.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/pikachu.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/eevee.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=swsh"
+                class="game-window-hover"
+                aria-label="pokemon sword/shield"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-0"
+                  data-letter="S"
+                >
+                  S
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-1"
+                  data-letter="w"
+                >
+                  w
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-2"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-3"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-4"
+                  data-letter="d"
+                >
+                  d
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-5"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-6"
+                  data-letter="S"
+                >
+                  S
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-7"
+                  data-letter="h"
+                >
+                  h
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-8"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-9"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-10"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="13-window-info-text-11"
+                  data-letter="d"
+                >
+                  d
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-swsh"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">swsh</p>
+                  <p class="game-window-text-2">SWSH</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/rillaboom.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/cinderace.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/inteleon.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/zacian.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/zamazenta.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=bdsp"
+                class="game-window-hover"
+                aria-label="brilliant diamond/shining pearl"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-0"
+                  data-letter="B"
+                >
+                  B
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-1"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-2"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-3"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-4"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-6"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-7"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-8"
+                  data-letter="n"
+                >
+                  n
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-9"
+                  data-letter="t"
+                >
+                  t
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-10"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-11"
+                  data-letter="D"
+                >
+                  D
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-12"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-13"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-14"
+                  data-letter="m"
+                >
+                  m
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-15"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-16"
+                  data-letter="n"
+                >
+                  n
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-17"
+                  data-letter="d"
+                >
+                  d
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-18"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-19"
+                  data-letter="S"
+                >
+                  S
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-20"
+                  data-letter="h"
+                >
+                  h
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-21"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-22"
+                  data-letter="n"
+                >
+                  n
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-23"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-24"
+                  data-letter="n"
+                >
+                  n
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-25"
+                  data-letter="g"
+                >
+                  g
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-26"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-27"
+                  data-letter="P"
+                >
+                  P
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-28"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-29"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-30"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="14-window-info-text-31"
+                  data-letter="l"
+                >
+                  l
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-bdsp"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">bdsp</p>
+                  <p class="game-window-text-2">BDSP</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/torterra.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/infernape.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/empoleon.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/dialga.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/palkia.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=lga"
+                class="game-window-hover"
+                aria-label="pokemon legends: arceus"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-0"
+                  data-letter="L"
+                >
+                  L
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-1"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-2"
+                  data-letter="g"
+                >
+                  g
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-3"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-4"
+                  data-letter="n"
+                >
+                  n
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-5"
+                  data-letter="d"
+                >
+                  d
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-6"
+                  data-letter="s"
+                >
+                  s
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-7"
+                  data-letter="‏‏‎ ‎"
+                >
+                  ‏‏‎ ‎
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-8"
+                  data-letter="A"
+                >
+                  A
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-9"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-10"
+                  data-letter="c"
+                >
+                  c
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-11"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-12"
+                  data-letter="u"
+                >
+                  u
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="15-window-info-text-13"
+                  data-letter="s"
+                >
+                  s
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-lga"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">lga</p>
+                  <p class="game-window-text-2">LGA</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/decidueye-hisuian.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/typhlosion-hisuian.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/samurott-hisuian.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/arceus.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+            <div class="main-menu-game-window">
+              <a
+                href="./planner.html?game=sv"
+                class="game-window-hover"
+                aria-label="pokemon scarlet/violet"
+              ></a>
+              <div class="game-window-info-title">
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-0"
+                  data-letter="S"
+                >
+                  S
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-1"
+                  data-letter="c"
+                >
+                  c
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-2"
+                  data-letter="a"
+                >
+                  a
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-3"
+                  data-letter="r"
+                >
+                  r
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-4"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-6"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-7"
+                  data-letter="t"
+                >
+                  t
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-8"
+                  data-letter="/"
+                >
+                  /
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-9"
+                  data-letter="V"
+                >
+                  V
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-10"
+                  data-letter="i"
+                >
+                  i
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-11"
+                  data-letter="o"
+                >
+                  o
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-12"
+                  data-letter="l"
+                >
+                  l
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-13"
+                  data-letter="e"
+                >
+                  e
+                </p>
+                <p
+                  class="game-window-info-title-text"
+                  id="16-window-info-text-14"
+                  data-letter="t"
+                >
+                  t
+                </p>
+              </div>
+              <div
+                class="game-window-info-bg game-window-colour-change-default"
+                id="game-window-info-bg-sv"
+              >
+                <div
+                  class="game-window-info-accent game-window-colour-change-default-accent"
+                ></div>
+              </div>
+              <div class="game-window-image-container">
+                <div class="game-window-image-border">
+                  <p class="game-window-text-1">SV</p>
+                  <p class="game-window-text-2">SV</p>
+                  <div class="game-window-image-grid">
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/meowscarada.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/skeledirge.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/quaquaval.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/koraidon.png"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        class="menu-sprite-default"
+                        src="./images/pokemon_sprites/miraidon.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="game-window-image-bg-accent-dark-default"></div>
+                <div class="game-window-image-bg-accent-light-default"></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <footer>
-        <p>Made by Nathan Moir</p>
+      <p>Made by fifty7north</p>
     </footer>
-</body>
-
+  </body>
 </html>
