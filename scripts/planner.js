@@ -294,6 +294,8 @@ document.querySelectorAll('.pokemon-entry').forEach(entry => {
             document.getElementById('selected-pokemon-data-info-content-type-1').querySelector('img').style.opacity = 1;
             document.getElementById('selected-pokemon-data-info-content-type-1').querySelector('img').setAttribute
             ('src', './images/type_icons/pokemon_type_icon_'+pokemon[1][0]['type'][0]+'.svg');
+            document.getElementById('selected-pokemon-data-info-content-type-1').querySelector('img').setAttribute
+            ('alt', pokemon[1][0]['type'][0]+' type icon');
             document.getElementById('selected-pokemon-data-info-content-type-1').querySelector('div').style.backgroundColor = 'var(--'+pokemon[1][0]['type'][0]+')'
 
             let type2 = pokemon[1][0]['type'][1].charAt(0).toUpperCase() + pokemon[1][0]['type'][1].slice(1);
@@ -301,6 +303,8 @@ document.querySelectorAll('.pokemon-entry').forEach(entry => {
             document.getElementById('selected-pokemon-data-info-content-type-2').querySelector('img').style.opacity = 1;
             document.getElementById('selected-pokemon-data-info-content-type-2').querySelector('img').setAttribute
             ('src', './images/type_icons/pokemon_type_icon_'+pokemon[1][0]['type'][1]+'.svg');
+            document.getElementById('selected-pokemon-data-info-content-type-1').querySelector('img').setAttribute
+            ('alt', pokemon[1][0]['type'][1]+' type icon');
             document.getElementById('selected-pokemon-data-info-content-type-2').querySelector('div').style.backgroundColor = 'var(--'+pokemon[1][0]['type'][1]+')'
         } else {
             let type1 = pokemon[1][0]['type'][0].charAt(0).toUpperCase() + pokemon[1][0]['type'][0].slice(1);
@@ -308,6 +312,8 @@ document.querySelectorAll('.pokemon-entry').forEach(entry => {
             document.getElementById('selected-pokemon-data-info-content-type-1').querySelector('img').style.opacity = 1;
             document.getElementById('selected-pokemon-data-info-content-type-1').querySelector('img').setAttribute
             ('src', './images/type_icons/pokemon_type_icon_'+pokemon[1][0]['type'][0]+'.svg');
+            document.getElementById('selected-pokemon-data-info-content-type-1').querySelector('img').setAttribute
+            ('alt', pokemon[1][0]['type'][0]+' type icon');
             document.getElementById('selected-pokemon-data-info-content-type-1').querySelector('div').style.backgroundColor = 'var(--'+pokemon[1][0]['type'][0]+')'
 
             document.getElementById('selected-pokemon-data-info-content-type-2').querySelector('p').innerHTML = '';

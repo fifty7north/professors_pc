@@ -20,6 +20,7 @@ footer {
         .mobile-controls-button {
             height: 24px;
             padding: 12px;
+            width: 24px;
         }
     }
 }
