@@ -82,15 +82,27 @@ gamePokemonData.forEach((pokemon) => {
       pokemonWeaknessArray.push(typeWeakness);
     }
 
-    //If the pokemon has an ability that modifies it's weaknesses, modifies specific type value based on ability
+    //*If the pokemon has an ability that modifies it's weaknesses, modifies specific type value based on ability
     if (pokemon[1][variant]["ability"] !== "default") {
       if (pokemon[1][variant]["ability"] == "Heatproof") {
+        //Halves damage from fire type attacks
         pokemonWeaknessArray[1] = pokemonWeaknessArray[1] * 0.5;
       } else if (pokemon[1][variant]["ability"] == "Levitate") {
+        //Grants immunity to ground type attacks
         pokemonWeaknessArray[8] = 0;
       } else if (pokemon[1][variant]["ability"] == "Thick Fat") {
+        //Halves damage from fire and ice type attacks
         pokemonWeaknessArray[1] = pokemonWeaknessArray[1] * 0.5;
         pokemonWeaknessArray[5] = pokemonWeaknessArray[5] * 0.5;
+      } else if (pokemon[1][variant]["ability"] == "Sap Sipper") {
+        //Grants immunity to grass type attacks
+        pokemonWeaknessArray[4] = 0;
+      } else if (pokemon[1][variant]["ability"] == "Volt Absorb") {
+        //Grants immunity to electric type attacks
+        pokemonWeaknessArray[3] = 0;
+      } else if (pokemon[1][variant]["ability"] == "Water Absorb") {
+        //Grants immunity to water type attacks
+        pokemonWeaknessArray[2] = 0;
       }
     }
 
@@ -158,6 +170,16 @@ gamePokemonData.forEach((pokemon) => {
     Object.assign(pokemon[1][variant], { type_coverage: pokemonCoverageArray });
   }
 });
+
+//Debugging gamePokemonData
+console.table(
+  gamePokemonData.map((pokemon) => {
+    return {
+      name: pokemon[0],
+      variants: pokemon[1],
+    };
+  })
+);
 
 /**
  *
